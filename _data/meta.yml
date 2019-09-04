@@ -5,15 +5,15 @@
 # Replace the values here with your project` information.
 project:
   # The name of the organisation or entity that owns this project
-  organisation: "Electric Book Works"
+  organisation: "Roger Federer Foundation"
   # A live web address for the organisation
-  url: "http://electricbook.works/"
+  url: "https://www.rogerfedererfoundation.org/"
   # The default contact email address
   email: "support@electricbook.works"
   # The name of the project of books in this folder.
-  name: "Electric Book"
+  name: "Natural Playgrounds Toolkit"
   # A one-liner about this project. Useful for Open Graph metadata.
-  description: "The Electric Book template in action."
+  description: "The Natural Playgrounds Toolkit provides the skills required to build a playground for young children out of natural resources."
   # The logo of the organisation, saved web-ready in /assets
   logo: "publisher-logo.jpg"
   # An image in /assets that stands for the project
@@ -39,17 +39,17 @@ project:
 
 works:
   - directory: "book"
-    title: "Template"
+    title: "Natural Playgrounds Toolkit"
     subtitle: ""
-    creator: "A. N. Author" # E.g. the author
+    creator: "Talita van der Walt for Penreach" # E.g. the author
     contributor: "" # E.g. other contributors
-    subject: "Fiction" # E.g. BISAC terms (https://bisg.org/page/BISACEdition) or BIC (http://editeur.dyndns.org/bic_categories)
-    description: "The Electric Book's blank template." # E.g. the blurb
-    publisher: "EBW" # E.g. the publisher, imprint or brand name
+    subject: "Non-Fiction" # E.g. BISAC terms (https://bisg.org/page/BISACEdition) or BIC (http://editeur.dyndns.org/bic_categories)
+    description: "A toolkit for building your own natural playground." # E.g. the blurb
+    publisher: "Roger Federer Foundation" # E.g. the publisher, imprint or brand name
     publisher-url: ""
     date: "2015-12-31" # YYYY-MM-DD e.g. publication date
     modified: "2016-06-09" # YYYY-MM-DD e.g. date of last revision
-    type: "Novel" # e.g. Novel, Poetry, Memoir
+    type: "Education" # e.g. Novel, Poetry, Memoir
     identifier: "" # e.g. ISBN or UUID
     source: "" # e.g. parent ISBN or ISTC
     language: "en" # use ISO 639-1, 639-2, or 639-3 codes (in that order of preference)
@@ -90,29 +90,91 @@ works:
           - "0-1-titlepage"
           - "0-2-copyright"
           - "0-3-contents"
-          - "01": "Chapter One"
-          - "02": "Chapter Two"
+          - "0-4-introduction"
+          - "01": "Section 1"
+          - "02": "Section 2"
+          - "03": "Section 3"
+          - "04": "Section 4"
+          - "05": "Section 5"
+          - "06": "Toolbox"
+          - "07": "Facilitator's Guide"
+          - "50-01-glossary"
+          - "50-02-bibliography"
         nav: # For each menu item, include at least label and file. Optionally add id (for deep linking) and children.
-          - label: "Frontmatter"
-            children:
-              - label: "Cover"
-                file: "index"
-              - label: "Title page"
-                file: "0-1-titlepage"
-              - label: "Copyright"
-                file: "0-2-copyright"
           - label: "Contents"
             file: "0-3-contents"
-          - label: "Chapter One"
-            file: "01"
-            id: "1-hello-world"
-          - label: "Chapter Two"
-            file: "02"
-            id: "2-goodbye-world"
+          - label: "Introduction"
+            file: "0-4-introduction"
             children: 
-              - label: "Subsection"
+              - label: "Children's right to play"
+                file: "0-4-introduction"
+                id: "childrens-right-to-play"
+          - label: "Section 1"
+            file: "01"
+            children:
+              - label: "The importance of play"
+                file: "01"
+              - label: "What children need to develop"
+                file: "01"
+                id: "what-children-need-to-develop"
+              - label: "Learning through play"
+                file: "01"
+                id: "learning-through-play"
+              - label: "Age-appropriate play"
+                file: "01"
+                id: "age-appropriate-play"
+              - label: "Outdoor free play"
+                file: "01"
+                id: "outdoor-free-play"
+              - label: "Playground safety"
+                file: "01"
+                id: "playground-safety"
+              - label: "How to design your natural playground"
+                file: "01"
+                id: "how-to-design-your-natural-playground"
+          - label: "Section 2"
+            file: "02"
+            children: 
+              - label: "Involving the community"
                 file: "02"
-                id: "example-id"
+              - label: "How to handle community participation"
+                file: "02"
+                id: "how-to-handle-community-participation"
+              - label: "Facilitating community meetings"
+                file: "02"
+                id: "facilitating-community-meetings"
+          - label: "Section 3"
+            file: "03"
+            children:
+              - label: "What is a need assessment?"
+                file: "03"
+              - label: "How to do a need assessment"
+                file: "03"
+                id: "how-to-do-a-need-assessment"
+          - label: "Section 4"
+            file: "04"
+            children:
+              - label: "What is a playground action plan?"
+                file: "04"
+              - label: "How to write a playground action plan"
+                file: "04"
+                id: "how-to-write-a-playground-action-plan"
+          - label: "Section 5"
+            file: "05"
+            children:
+              - label: "What is monitoring and evaluation?"
+                file: "05"
+              - label: "How to approach monitoring and evaluation"
+                file: "05"
+                id: "how-to-approach-monitoring-and-evaluation"
+          - label: "Toolbox"
+            file: "06"
+          - label: "Facilitator's Guide"
+            file: "07"
+          - label: "Glossary"
+            file: "50-01-glossary"
+          - label: "Bibliography"
+            file: "50-02-bibliography"
         start-page: "0-3-contents" # At which file should users start reading?
         contents-page: "0-3-contents" # Your contents-page file, if you have one.
       epub:
