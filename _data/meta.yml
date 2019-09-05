@@ -105,10 +105,6 @@ works:
             file: "0-3-contents"
           - label: "Introduction"
             file: "0-4-introduction"
-            children: 
-              - label: "Children's right to play"
-                file: "0-4-introduction"
-                id: "childrens-right-to-play"
           - label: "Section 1: Understand"
             file: "01"
             children:
