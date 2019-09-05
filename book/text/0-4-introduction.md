@@ -2,6 +2,8 @@
 title: "Introduction"
 ---
 
+{% include metadata %}
+
 # Introduction
 
 When children play, they are developing skills, habits and attitudes that will stay with them for the rest of their lives. Play is so important for the development of a child that it has been identified by the United Nations[^1] as a right of every child.
