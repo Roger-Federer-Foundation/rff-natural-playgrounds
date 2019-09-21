@@ -1,0 +1,22 @@
+// Typography
+
+@mixin heading-1() {
+    color: $color-accent;
+    font-weight: normal;
+    strong:first-of-type {
+        display: block;
+    }
+}
+
+@mixin heading-2() {
+    font-size: $font-size-default * 1.3;
+}
+
+#content {
+    h1 {
+        @include heading-1();
+    }
+    h2 {
+        @include heading-2();
+    }
+}

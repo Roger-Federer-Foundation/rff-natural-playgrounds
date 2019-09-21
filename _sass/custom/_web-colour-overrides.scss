@@ -1,0 +1,56 @@
+// Colour overrides
+
+// TO DO
+// - check fact-box and tip box overrides
+
+@mixin body-colour-overrides($color, $lightcolor, $lightlightcolor) {
+    // Background colour changes
+    .nav-button {
+        background-color: $color;
+    }
+    // Light background-colour changes
+    #content .box,
+    #content .fact-box {
+        background-color: $lightlightcolor;
+    }
+    // Text colour changes
+    #content h1,
+    #content h2,
+    #content .box h2,
+    #content .box h3,
+    #content .box h4,
+    #content .box h5,
+    #content .box h6,
+    #content .fact-box h2,
+    #content .fact-box h3,
+    #content .fact-box h4,
+    #content .fact-box h5,
+    #content .fact-box h6 {
+        color: $color;
+    }
+}
+
+body {
+    & {
+        // Default
+        @include body-colour-overrides($blue, $lightblue, $lightlightblue)
+    }
+    &.blue {
+        @include body-colour-overrides($blue, $lightblue, $lightlightblue)
+    }
+    &.purple {
+        @include body-colour-overrides($purple, $lightpurple, $lightlightpurple)
+    }
+    &.green {
+        @include body-colour-overrides($green, $lightgreen, $lightlightgreen)
+    }
+    &.yellow {
+        @include body-colour-overrides($yellow, $lightyellow, $lightlightyellow)
+    }
+    &.red {
+        @include body-colour-overrides($red, $lightred, $lightlightred)
+    }
+    &.grey {
+        @include body-colour-overrides($grey, $lightgrey, $lightlightgrey)
+    }
+}

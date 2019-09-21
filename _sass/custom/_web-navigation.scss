@@ -1,0 +1,11 @@
+// Navigation
+
+.masthead {
+    @media only screen and (min-width: $max-width-default) {
+        border-bottom-color: $black-10;
+    }
+}
+
+.nav-title {
+    font-weight: bold;
+}
