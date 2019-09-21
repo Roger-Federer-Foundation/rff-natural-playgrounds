@@ -4,17 +4,22 @@
 @mixin sidenote() {
     font-family: $font-text-secondary;
     clear: both;
-    float: right;
-    max-width: 10em;
     min-width: 5em;
-    margin: 0 0 0.5em 0.5em;
+    margin: 0 0 0.5em;
     padding: $line-height-default / 2;
     text-indent: 0;
-    font-size: $font-size-default * $font-size-smaller;
+    font-size: 1em * $font-size-smaller;
     line-height: $line-height-default * $font-size-smaller;
     font-style: inherit;
     background-color: white;
     position: relative;
+    // Sidenotes only float to the right on screens
+    // larger than the smallest break point
+    @media only screen and (min-width: $break-width-small) {
+        float: right;
+        margin: 0 0 0.5em 0.5em;
+        max-width: 10em;
+    }
     @media only screen and (min-width: $break-width-large) {
         margin: 0 -12em ($line-height-default / 2) 2em;
     }
