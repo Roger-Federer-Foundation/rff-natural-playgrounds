@@ -1,6 +1,6 @@
-# The Electric Book Jekyll template
+# Natural Playgrounds Toolkit
 
-A Jekyll template for creating books in multiple formats:
+This is built with the Electric Book Jekyll template for creating books in multiple formats:
 
 - print PDFs for high-end book publishing
 - screen PDFs for reading on screen
