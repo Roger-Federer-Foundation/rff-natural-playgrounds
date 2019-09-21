@@ -72,7 +72,7 @@ web:
   # If not set, book-title is default.
   # Note that breadcrumbs slows your Jekyll build significantly.
   masthead:
-    content: breadcrumbs
+    content: project-name
   # -----------------
   # Content accordion
   # -----------------
