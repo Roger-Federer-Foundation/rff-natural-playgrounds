@@ -74,7 +74,7 @@
     @include fact-box();
 }
 .tip-box {
-    @include fact-box($color-accent, transparent, $color-accent, $color-accent);
+    @include fact-box($lightblue, transparent, $lightblue, $lightblue);
     &::before {
         content: "Tip"
     }

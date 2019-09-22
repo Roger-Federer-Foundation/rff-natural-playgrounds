@@ -1,5 +1,7 @@
 // Typography
 
+// Headings
+
 @mixin heading-1() {
     color: $color-accent;
     font-weight: normal;
@@ -18,5 +20,42 @@
     }
     h2 {
         @include heading-2();
+    }
+}
+
+// Links
+
+// We use blue as an accent colour, so we need extra affordances that links are clickable.
+#content {
+    a {
+        border-bottom: $rule-thickness dashed $lightgrey;
+        &:hover {
+            border-bottom-color: $grey;
+        }
+    }
+    .nav-slides {
+        a {
+            border-bottom: none;
+        }
+    }
+}
+
+// Tables
+
+@mixin table-colours($accent-color: $color-accent, $text-color: white) {
+    color: $accent-color;
+    th:not(:empty) {
+        background-color: $accent-color;
+        color: $text-color;
+    }
+}
+
+#content {
+    table {
+        @include table-colours();
+        font-family: $font-text-secondary;
+        th, td {
+            border: $rule-thickness solid $lightgrey;
+        }
     }
 }

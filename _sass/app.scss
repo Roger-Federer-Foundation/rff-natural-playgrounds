@@ -240,6 +240,10 @@ $web-reset-sequences: true !default; // This should stay last in the @import lis
 // Reset browser CSS as best we can
 @import "partials/web-css-reset";
 
+// Load general-purpose mixins
+@import "partials/web-mixins--buttons";
+@import "partials/web-mixins--sidenotes";
+
 // Structural HTML components
 @import "partials/web-wrappers";
 
@@ -270,6 +274,7 @@ $web-reset-sequences: true !default; // This should stay last in the @import lis
 @import "partials/web-boxes";
 @import "partials/web-buttons";
 @import "partials/web-code";
+@import "partials/web-definitions";
 @import "partials/web-dialogue";
 @import "partials/web-figures";
 @import "partials/web-glossaries";
