@@ -9,3 +9,24 @@
 .nav-title {
     font-weight: bold;
 }
+
+.pagination {
+    .pagination-next {
+        font-size: 2em;
+        right: 0;
+        position: absolute;
+        @media only screen and (min-width: $break-width-medium) {
+            position: fixed;
+            bottom: 2em;
+        }
+    }
+    .pagination-previous {
+        font-size: 2em;
+        left: 0;
+        position: absolute;
+        @media only screen and (min-width: $break-width-medium) {
+            position: fixed;
+            bottom: 2em;
+        }
+    }
+}
