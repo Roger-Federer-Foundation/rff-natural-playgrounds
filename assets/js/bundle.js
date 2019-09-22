@@ -26,11 +26,15 @@ layout: null
     {% include_relative show-hide.js %}
     {% include_relative slides.js %}
     {% include_relative definitions.js %}
-
+    
     {% if site.data.settings.web.svg.inject == true %}
-        {% include_relative svg-inject.min.js %}
-        {% include_relative svg-management.js %}
+    {% include_relative svg-inject.min.js %}
+    {% include_relative svg-management.js %}
     {% endif %}
+    
+    {% comment %}Form-storage: https://github.com/appleple/form-storage{% endcomment %}
+    {% include_relative form-storage/form-storage.js %}
+    {% include_relative list-to-checklist.js %}
 
 {% endif %}
 
