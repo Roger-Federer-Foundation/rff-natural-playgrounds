@@ -5,7 +5,13 @@
 
 @mixin body-colour-overrides($color, $lightcolor, $lightlightcolor) {
     // Background colour changes
-    .nav-button {
+    .nav-button,
+    .fact-box::before,
+    #content table th:not(:empty),
+    .nav-slides,
+    #nav .nav-list ol li.active,
+    #nav .nav-list ol li:hover,
+    #footer {
         background-color: $color;
     }
     // Light background-colour changes
@@ -25,8 +31,48 @@
     #content .fact-box h3,
     #content .fact-box h4,
     #content .fact-box h5,
-    #content .fact-box h6 {
+    #content .fact-box h6,
+    #content .fact-box strong,
+    .pullquote,
+    #content table,
+    .slides .figure .figure-body .title,
+    #nav .nav-title,
+    .masthead a,
+    .pagination .pagination-next a,
+    .pagination .pagination-previous a {
         color: $color;
+    }
+    .tip-box::before {
+        color: $lightcolor;
+    }
+    // Border changes
+    .fact-box::before {
+        border-color: $color;
+    }
+    .tip-box::before {
+        border-color: $lightcolor;
+    }
+    .fact-box,
+    .pullquote,
+    #footer {
+        border-top-color: $color;
+    }
+    .tip-box {
+        border-top-color: $lightcolor;
+    }
+    .pullquote {
+        border-bottom-color: $color;
+    }
+    // Outline colour
+    .nav-slides .slide-current a {
+        outline-color: darken($color, 20%);
+    }
+    // Icon colour changes
+    .icon-brain::before {
+        @include icon-brain($color, $line-height-default * 2);
+    }
+    .icon-key::before {
+        @include icon-key($color, $line-height-default * 2);
     }
 }
 
