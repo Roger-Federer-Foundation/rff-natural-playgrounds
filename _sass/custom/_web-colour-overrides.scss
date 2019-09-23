@@ -1,13 +1,11 @@
 // Colour overrides
 
-// TO DO
-// - check fact-box and tip box overrides
-
 @mixin body-colour-overrides($color, $lightcolor, $lightlightcolor) {
     // Background colour changes
     .nav-button,
     .fact-box::before,
     #content table th:not(:empty),
+    &.tool h1[class*="icon-"]::before,
     .nav-slides,
     #nav .nav-list ol li.active,
     #nav .nav-list ol li:hover,
