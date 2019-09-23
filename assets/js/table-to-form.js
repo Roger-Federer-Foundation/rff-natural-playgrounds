@@ -4,9 +4,9 @@
 // Convert a table to a form
 // -------------------------
 // This converts a simple table to a form.
-// Each column sets as aspect of the form:
+// Each column sets an aspect of the form:
 // - Column 1: labels (main text)
-// - Column 2: input hints (small text below the label)
+// - Column 2: input hint (small text below the label)
 // - Column 3: placeholder text in the textarea
 // - Column 4: sets the number of rows in the textarea
 // Text in each column is optional.
