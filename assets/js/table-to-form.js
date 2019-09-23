@@ -56,7 +56,6 @@ function ebTableToForm(table, number) {
         input = document.createElement('textarea');
         input.id = ebTablesToFormsSlugify(rows[i].innerText) + '-' + number;
         input.name = input.id;
-        input.classList.add('js-persist');
 
         inputHint = document.createElement('p');
         inputHint.classList.add('input-hint');

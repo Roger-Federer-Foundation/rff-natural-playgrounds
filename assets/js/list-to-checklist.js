@@ -37,7 +37,6 @@ function ebListToChecklistCreateForm(list, number) {
         checklistItem.type = 'checkbox';
         checklistItem.id = ebListToChecklistSlugify(listItems[i].innerText) + '-' + number;
         checklistItem.name = checklistItem.id;
-        checklistItem.classList.add('js-persist');
 
         // Create the label
         var label = document.createElement('label');
