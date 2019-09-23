@@ -1,13 +1,24 @@
 // Navigation
 
 .masthead {
-    @media only screen and (min-width: $max-width-default) {
-        border-bottom-color: $black-10;
+    ul {
+        li {
+            display: none;
+        }
     }
 }
 
 .nav-title {
     font-weight: bold;
+}
+
+.content-logo {
+    text-align: right;
+    margin: 0 $line-height-default;
+    img {
+        width: $line-height-default * 10;
+        max-width: 100%;
+    }
 }
 
 .pagination {
