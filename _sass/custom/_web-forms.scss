@@ -1,3 +1,5 @@
+// Checklists
+
 .list-to-checklist {
     // border: $rule-thickness solid $lightgrey;
     font-family: $font-text-secondary;
@@ -9,5 +11,28 @@
         &:last-child {
             margin-bottom: 0;
         }
+    }
+}
+
+
+// Forms
+
+.table-to-form {
+    font-family: $font-text-secondary;
+    label {
+        color: $color-accent;
+        display: block;
+        margin-bottom: $line-height-default / 4;
+    }
+    .input-hint {
+        color: $grey;
+        font-size: 1em * $font-size-smaller;
+        line-height: $line-height-default;
+        margin-bottom: $line-height-default / 2;
+    }
+    textarea {
+        border-radius: $line-height-default / 4;
+        border-color: $lightgrey;
+        margin-top: 0;
     }
 }

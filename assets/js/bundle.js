@@ -35,6 +35,7 @@ layout: null
     {% comment %}Form-storage: https://github.com/appleple/form-storage{% endcomment %}
     {% include_relative form-storage/form-storage.js %}
     {% include_relative list-to-checklist.js %}
+    {% include_relative table-to-form.js %}
 
 {% endif %}
 
