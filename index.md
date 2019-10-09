@@ -3,13 +3,9 @@ title: Home
 style: home
 ---
 
-{% include metadata %}
+# The Natural Playground Handbook
 
-# {{ project-name }}
+When children play, they are developing skills, habits and
+attitudes that will stay with them for the rest of their lives: how to cope with frustration, how to keep on trying, how to share, and how to express what they think and imagine.
 
-{{ project-description }}
-
-{% for book in site.data.meta.works %}
-*[{{ book.title }}]({{ book.directory }}/text/{{ book.products.web.start-page }}.html)*
-{% endfor %}
-
+But many children lack opportunities to play. This handbook helps communities and teachers to create playgrounds from natural resources.

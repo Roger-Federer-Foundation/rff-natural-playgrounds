@@ -1,0 +1,79 @@
+// Each section needs to have it's own accent colour:
+
+//     Introduction, Toolbox, Facilitator's Guide: dark grey
+//     Section 1: blue
+//     Section 2: purple
+//     Section 3: light green
+//     Section 4: orange/yellow
+//     Section 5: red
+
+$black-10: #e1e0dc; // cmyk(4%, 3%, 6%, 7%)
+$black-30: #c6cacb; // cmyk(22%, 15%, 16%, 0%)
+$black-50: #abb1b3; // cmyk(34%, 24%, 25%, 0%)
+$black-60: #6b7679; // cmyk(50%, 35%, 35%, 27%)
+$black-70: #393c3f; // cmyk(66%, 57%, 52%, 55%)
+$black-80: #2b2d30; // cmyk(69%, 61%, 56%, 66%)
+$true-black: #231f20; // cmyk(0%, 0%, 0%, 100%)
+$rich-black: #000119; // cmyk(96%, 70%, 46%, 86%)
+
+$blue: #418ab3; // cmyk(75%, 36%, 15%, 0%)
+$lightblue: #adc1d8; // cmyk(36%, 17%, 8%, 2%)
+$lightlightblue: #d7dfec; // cmyk(18%, 8%, 4%, 1%)
+
+$purple: #db96fc; // cmyk(22%, 43%, 0%, 0%)
+$lightpurple: #dccce5; // cmyk(15%, 23%, 0%, 0%)
+$lightlightpurple: #eee5f3; // cmyk(7%, 12%, 0%, 0%)
+
+$green: #93c355; // cmyk(50%, 0%, 80%, 0%)
+$lightgreen: #cee2b0; // cmyk(25%, 0%, 40%, 0%)
+$lightlightgreen: #e6f0da; // cmyk(13%, 0%, 20%, 0%)
+
+$yellow: #fecc36; // cmyk(0%, 21%, 84%, 0%)
+$lightyellow: #ffe5a7; // cmyk(0%, 11%, 42%, 0%)
+$lightlightyellow: #fff1d5; // cmyk(0%, 6%, 21%, 0%)
+
+$red: #d80004; // cmyk(6%, 100%, 100%, 1%)
+$lightred: #ed977a; // cmyk(3%, 50%, 50%, 1%)
+$lightlightred: #f5ccbb; // cmyk(2%, 25%, 25%, 1%)
+
+$grey: $black-60;
+$lightgrey: $black-30;
+$lightlightgrey: $black-10;
+
+// CYMK values for print output
+@if $output-format == "print-pdf" {
+    
+    $black-10: cmyk(4%, 3%, 6%, 7%); // #e1e0dc
+    $black-30: cmyk(22%, 15%, 16%, 0%); // #c6cacb
+    $black-50: cmyk(34%, 24%, 25%, 0%); // #abb1b3
+    $black-60: cmyk(50%, 35%, 35%, 27%); // #6b7679
+    $black-70: cmyk(66%, 57%, 52%, 55%); // #393c3f
+    $black-80: cmyk(69%, 61%, 56%, 66%); // #2b2d30
+    $true-black: cmyk(0%, 0%, 0%, 100%); // #231f20
+    $rich-black: cmyk(96%, 70%, 46%, 86%); // #000119
+
+    $blue: cmyk(75%, 36%, 15%, 0%); // #418ab3
+    $lightblue: cmyk(14%, 3%, 1%, 0%); // #d7e8f4
+    $lightlightblue: cmyk(18%, 8%, 4%, 1%); // #d7dfec
+
+    $purple: cmyk(22%, 43%, 0%, 0%); // #db96fc
+    $lightpurple: cmyk(15%, 23%, 0%, 0%); // #dccce5
+    $lightlightpurple: cmyk(7%, 12%, 0%, 0%); // #eee5f3
+
+    $green: cmyk(50%, 0%, 80%, 0%); // #93c355
+    $lightgreen: cmyk(25%, 0%, 40%, 0%); // #cee2b0
+    $lightlightgreen: cmyk(13%, 0%, 20%, 0%); // #e6f0da
+
+    $yellow: cmyk(0%, 21%, 84%, 0%); // #fecc36
+    $lightyellow: cmyk(0%, 11%, 42%, 0%); // #ffe5a7
+    $lightlightyellow: cmyk(0%, 6%, 21%, 0%); // #fff1d5
+
+    $red: cmyk(6%, 100%, 100%, 1%); // #d80004
+    $lightred: cmyk(3%, 50%, 50%, 1%); // #ed977a
+    $lightlightred: cmyk(2%, 25%, 25%, 1%); // #f5ccbb
+
+    $grey: $black-60;
+    $lightgrey: $black-30;
+    $lightlightgrey: $black-10;
+
+}

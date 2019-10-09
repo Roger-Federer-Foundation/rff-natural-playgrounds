@@ -1,0 +1,35 @@
+// Figures
+
+.figure {
+    color: $grey;
+    font-family: $font-text-secondary;
+    .figure-body {
+        .title {
+            text-align: left;
+        }
+        .caption {
+            text-align: left;
+        }
+    }
+}
+
+.slides {
+    .figure {
+        .caption {
+            .figure-reference {
+                display: none;
+            }
+        }
+    }
+    .figure-summary-meta {
+        font-family: $font-text-secondary;
+        .caption {
+            color: $grey;
+            font-size: 90%;
+            .figure-reference {
+                display: inline-block;
+                font-weight: bold;
+            }
+        }
+    }
+}

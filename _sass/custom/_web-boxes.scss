@@ -1,0 +1,81 @@
+// .box
+// .fact-box
+//     Tip boxes (similar style to fact boxes)
+
+@mixin custom-box-styles() {
+    h2, h3, h4, h5, h6 {
+        font-size: 100%;
+        font-style: normal;
+        font-weight: bold;
+        margin: 0 0 ($line-height-default / 2) 0;
+    }
+}
+
+@mixin icon-position {
+    margin-left: $line-height-default * 2;
+    min-height: $line-height-default * 1.5; // avoids icon overlapping edge of box
+    &::before {
+        // @include icon as if here for each different icon class
+        display: block;
+        float: left;
+        margin-left: -($line-height-default * 2);
+        margin-top: $line-height-default / 6;
+        padding-right: $line-height-default / 2;
+    }
+}
+
+@mixin fact-box($accent-color: $color-accent, $tab-color: $color-accent, $tab-border-color: $color-accent, $tab-text-color: white) {
+    @include box();
+    border-top: ($rule-thickness * 3) solid $tab-border-color;
+    font-family: $font-text-secondary;
+    font-size: 90%; // sans-serif font is bigger visually
+    margin-top: $line-height-default * 2.5; // make space for 'fact box' tab
+    position: relative;
+    // Tab above box
+    &::before {
+        background-color: $tab-color;
+        border: ($rule-thickness * 3) solid $tab-border-color;
+        border-bottom: none;
+        color: $tab-text-color;
+        content: "Fact box";
+        display: inline-block;
+        font-size: 100%;
+        font-weight: bold;
+        letter-spacing: 0.05em;
+        padding: ($line-height-default / 4) ($line-height-default / 2);
+        position: absolute;
+        text-transform: uppercase;
+        top: -2.7em; // magic number
+        left: -0.05em; // magic number
+    }
+    // Bold is colour of box
+    strong {
+        color: $accent-color;
+    }
+    // Facts with icons
+    .icon-brain {
+        @include icon-position();
+        &::before {
+            @include icon-brain($accent-color, $line-height-default * 2);
+        }
+    }
+    .icon-key {
+        @include icon-position();
+        &::before {
+            @include icon-key($accent-color, $line-height-default * 2);
+        }
+    }
+}
+
+.box {
+    @include custom-box-styles();
+}
+.fact-box {
+    @include fact-box();
+}
+.tip-box {
+    @include fact-box($lightblue, transparent, $lightblue, $lightblue);
+    &::before {
+        content: "Tip"
+    }
+}

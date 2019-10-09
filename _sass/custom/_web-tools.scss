@@ -1,0 +1,25 @@
+// Tools
+
+@mixin tool-icon-styles($color: $grey) {
+    background-color: $grey;
+    border-radius: $line-height-default / 4;
+    float: left;
+    height: $line-height-default * 1.3;
+    margin-right: $line-height-default / 4;
+    padding-top: ($line-height-default / 5);
+    padding-bottom: 0;
+    padding-left: ($line-height-default / 10);
+    padding-right: ($line-height-default / 10);
+    width: $line-height-default * 1.3;
+}
+
+.tool {
+    h1 {
+        &.icon-users {
+            &::before {
+                @include icon-users(white, $line-height-default * 3);
+                @include tool-icon-styles();
+            }
+        }
+    }
+}
