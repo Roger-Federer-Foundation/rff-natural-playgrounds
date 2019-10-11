@@ -23,3 +23,14 @@
         }
     }
 }
+
+.tool {
+    h1 {
+        &.icon-search {
+            &::before {
+                @include icon-search(white, $line-height-default * 3);
+                @include tool-icon-styles();
+            }
+        }
+    }
+}
