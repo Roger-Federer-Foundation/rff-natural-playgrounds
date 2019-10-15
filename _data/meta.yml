@@ -111,7 +111,7 @@ works:
           - "06-12"
           - "07"
           - "50-01-glossary"
-          - "50-02-bibliography"
+          - "50-02-references"
         nav: # For each menu item, include at least label and file. Optionally add id (for deep linking) and children.
           - label: "Contents"
             file: "0-3-contents"
@@ -226,8 +226,8 @@ works:
                 id: "using-guided-self-study"
           - label: "Glossary"
             file: "50-01-glossary"
-          - label: "Bibliography"
-            file: "50-02-bibliography"
+          - label: "References"
+            file: "50-02-references"
         start-page: "0-3-contents" # At which file should users start reading?
         contents-page: "0-3-contents" # Your contents-page file, if you have one.
       epub:
