@@ -3,6 +3,6 @@ title: "Glossary"
 style: chapter
 ---
 
-# Glossary
+# **Glossary**
 
 {% include glossary %}
