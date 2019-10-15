@@ -8,7 +8,7 @@ title: "Introduction"
 
 When children play, they are developing skills, habits and attitudes that will stay with them for the rest of their lives. Play is so important for the development of a child that it has been identified by the United Nations[^1] as a right of every child.
 
-[^1]: United Nations High Commission for Human Rights - full reference to be supplied
+[^1]: United Nations High Commission for Human Rights
 
 The skills required to properly develop self-discipline, motivation, and the ability to collaborate, all start to take root in the first six years of life. Through play, children learn how to cope with frustration, how to keep trying until they get it right, how to share with others, and how to express themselves.
 
