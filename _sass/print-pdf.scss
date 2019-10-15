@@ -54,6 +54,7 @@ $grid-columns: 3 !default;
 $column-gap-ratio: 10 !default;
 
 // Colours
+@import 'custom/colours';
 $colorspace: cmyk !default; // auto | none | rgb | cmyk | gray
 $color-text-main: cmyk(0,0,0,1) !default;
 $color-text-secondary: cmyk(0,0,0,0.8) !default;
@@ -470,9 +471,23 @@ $print-page-setup-lightning-source: false !default; // Removes crop marks and se
 @import "partials/print-questions";
 @import "partials/print-select-questions";
 @import "partials/print-cross-refs";
-@import "partials/print-reset-sequences"; // Resets p indents, margins after other elements. Must be last @import in list.
 @import "partials/print-page-headers-footers-content"; // Sets content for headers and footers
 @import "partials/print-page-headers-footers-style"; // Sets styling for headers and footers
+
+// Custom styles
+@import 'custom/icons';
+@import 'custom/pdf-boxes';
+@import 'custom/pdf-colour-overrides';
+@import 'custom/pdf-definitions';
+@import 'custom/pdf-figures';
+@import 'custom/pdf-forms';
+@import 'custom/pdf-pullquotes';
+@import 'custom/pdf-sidenotes';
+@import 'custom/pdf-tools';
+@import 'custom/pdf-typography';
+
+// Resets
+@import "partials/print-reset-sequences"; // Resets p indents, margins after other elements. Must be last @import in list.
 
 // Lightning Source setup
 @import "partials/print-page-setup-lightning-source"; // Removes crop marks and sets 3mm trim for Lightning Source

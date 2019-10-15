@@ -1,0 +1,146 @@
+// Tools
+
+@mixin tool-icon-styles($color: $grey) {
+    background-color: $grey;
+    border-radius: $line-height-default / 4;
+    float: left;
+    height: $line-height-default * 1.3;
+    margin-right: $line-height-default / 4;
+    padding-top: ($line-height-default / 5);
+    padding-bottom: 0;
+    padding-left: ($line-height-default / 10);
+    padding-right: ($line-height-default / 10);
+    width: $line-height-default * 1.3;
+}
+
+.tool {
+    h1 {
+        &.icon-users {
+            &::before {
+                @include icon-users(white, $line-height-default * 3);
+                @include tool-icon-styles();
+            }
+        }
+    }
+}
+
+.tool {
+    h1 {
+        &.icon-search {
+            &::before {
+                @include icon-search(white, $line-height-default * 3);
+                @include tool-icon-styles();
+            }
+        }
+    }
+}
+
+.tool {
+    h1 {
+        &.icon-map {
+            &::before {
+                @include icon-map(white, $line-height-default * 3);
+                @include tool-icon-styles();
+            }
+        }
+    }
+}
+
+.tool {
+    h1 {
+        &.icon-scale {
+            &::before {
+                @include icon-scale(white, $line-height-default * 3);
+                @include tool-icon-styles();
+            }
+        }
+    }
+}
+
+.tool {
+    h1 {
+        &.icon-injury {
+            &::before {
+                @include icon-injury(white, $line-height-default * 3);
+                @include tool-icon-styles();
+            }
+        }
+    }
+}
+
+.tool {
+    h1 {
+        &.icon-list {
+            &::before {
+                @include icon-list(white, $line-height-default * 3);
+                @include tool-icon-styles();
+            }
+        }
+    }
+}
+
+.tool {
+    h1 {
+        &.icon-paintbrush {
+            &::before {
+                @include icon-paintbrush(white, $line-height-default * 3);
+                @include tool-icon-styles();
+            }
+        }
+    }
+}
+
+.tool {
+    h1 {
+        &.icon-calendar {
+            &::before {
+                @include icon-calendar(white, $line-height-default * 3);
+                @include tool-icon-styles();
+            }
+        }
+    }
+}
+
+.tool {
+    h1 {
+        &.icon-tick {
+            &::before {
+                @include icon-tick(white, $line-height-default * 3);
+                @include tool-icon-styles();
+            }
+        }
+    }
+}
+
+.tool {
+    h1 {
+        &.icon-puzzle {
+            &::before {
+                @include icon-puzzle(white, $line-height-default * 3);
+                @include tool-icon-styles();
+            }
+        }
+    }
+}
+
+.tool {
+    h1 {
+        &.icon-pencil {
+            &::before {
+                @include icon-pencil(white, $line-height-default * 3);
+                @include tool-icon-styles();
+            }
+        }
+    }
+}
+
+.tool {
+    h1 {
+        &.icon-clipboard {
+            &::before {
+                @include icon-clipboard(white, $line-height-default * 3);
+                @include tool-icon-styles();
+            }
+        }
+    }
+}

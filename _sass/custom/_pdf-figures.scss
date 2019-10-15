@@ -1,0 +1,24 @@
+// Figures
+
+.figure {
+    color: $grey;
+    font-family: $font-text-secondary;
+    .figure-body {
+        .title {
+            text-align: left;
+        }
+        .caption {
+            text-align: left;
+        }
+    }
+}
+
+.slides {
+    .figure {
+        .caption {
+            .figure-reference {
+                display: none;
+            }
+        }
+    }
+}
