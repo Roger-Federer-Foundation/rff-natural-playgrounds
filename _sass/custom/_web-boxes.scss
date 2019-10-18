@@ -7,7 +7,9 @@
         font-size: 100%;
         font-style: normal;
         font-weight: bold;
-        margin: 0 0 ($line-height-default / 2) 0;
+        &:first-child {
+            margin-top: 0;
+        }
     }
 }
 

@@ -29,10 +29,10 @@ $edition-suffix: null !default;
 // First, we set several variables related to overall page setup.
 $page-width: 210mm !default;
 $page-height: 297mm !default;
-$margin-top: 20mm !default;
+$margin-top: 25mm !default; // allow for running header
 $margin-bottom: 20mm !default;
 $margin-outside: 65mm !default;
-$margin-inside: 20mm !default;
+$margin-inside: 18mm !default;
 $bleed: 0 !default;
 $trim: 0 !default;
 $crop-marks: none !default; // crop | none
@@ -44,7 +44,7 @@ $columns-default: 1 !default;
 // to 'true' in the list of partials below, where it is disabled by default.
 // For guidance on sidebar variables, see partials/_pdf-sidebar.scss.
 // 1. Set the margin between the page edge and the sidebar:
-$sidebar-margin-outside: 10mm !default;
+$sidebar-margin-outside: 18mm !default;
 // 2. The number of 'columns' in your page grid:
 $grid-columns: 3 !default;
 // 3. As a single integer, set the ratio of the column width to column-gap width.
@@ -52,6 +52,7 @@ $grid-columns: 3 !default;
 //    A higher number makes the column wider, and the gap smaller.
 //    A lower number makes the column narrower, and the gap wider.
 $column-gap-ratio: 10 !default;
+// 4. Then use @mixin sidebar() to move elements into the sidebar
 
 // Colours
 @import 'custom/colours';
@@ -248,7 +249,7 @@ $header-space-from-top: $margin-top / 2 + ($line-height-default / 4) !default; /
 $header-space-from-text: $line-height-default !default;
 $footer-space-from-bottom: $margin-bottom / 2 !default;
 $footer-space-from-text: $line-height-default !default;
-$header-text-align: center !default;
+$header-text-align: outside !default;
 $footer-text-align: center !default;
 $header-text-color: $black-50 !default;
 $footer-text-color: $black-50 !default;
@@ -258,17 +259,17 @@ $left-margin-font-weight: $header-font-weight !default;
 $left-margin-case: $header-case !default;
 $left-margin-letter-spacing: $header-letter-spacing !default;
 $left-margin-alignment: bottom !default;
-$left-margin-space-from-edge: 0 !default;
+$left-margin-space-from-edge: $sidebar-margin-outside !default;
 $left-margin-space-from-text: $margin-inside !default;
-$left-margin-text-align: $header-text-align !default;
+$left-margin-text-align: outside !default;
 $left-margin-text-color: $black-50 !default;
 $right-margin-font: $header-font !default;
 $right-margin-font-size: $header-font-size !default;
 $right-margin-font-weight: $header-font-weight !default;
 $right-margin-case: $header-case !default;
 $right-margin-letter-spacing: $header-letter-spacing !default;
-$right-margin-alignment: bottom !default;
-$right-margin-space-from-edge: 0 !default;
+$right-margin-alignment: outside !default;
+$right-margin-space-from-edge: $sidebar-margin-outside !default;
 $right-margin-space-from-text: $margin-inside !default;
 $right-margin-text-align: $header-text-align !default;
 $right-margin-text-color: $black-50 !default;
@@ -337,7 +338,7 @@ $print-index: true !default;
 $print-questions: true !default;
 $print-select-questions: true !default;
 $print-cross-refs: true !default;
-$print-sidebar: false !default; // Note that this is disabled by default
+$print-sidebar: true !default; // Note that this is disabled by default
 $print-reset-sequences: true !default; // Resets p indents, margins after other elements. Must be last @import in list.
 $print-page-headers-footers-content: true !default; // Sets content for headers and footers
 $print-page-headers-footers-style: true !default; // Sets styling for headers and footers
@@ -476,7 +477,6 @@ $print-page-headers-footers-style: true !default; // Sets styling for headers an
 // Custom styles
 @import 'custom/icons';
 @import 'custom/pdf-boxes';
-@import 'custom/pdf-colour-overrides';
 @import 'custom/pdf-definitions';
 @import 'custom/pdf-figures';
 @import 'custom/pdf-forms';
@@ -484,6 +484,8 @@ $print-page-headers-footers-style: true !default; // Sets styling for headers an
 @import 'custom/pdf-sidenotes';
 @import 'custom/pdf-tools';
 @import 'custom/pdf-typography';
+@import 'custom/pdf-video';
+@import 'custom/pdf-colour-overrides';
 
 // Resets
 @import "partials/print-reset-sequences"; // Resets p indents, margins after other elements. Must be last @import in list.

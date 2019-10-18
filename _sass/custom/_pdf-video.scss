@@ -1,0 +1,27 @@
+// Video
+
+.video {
+    @include sidebar();
+    margin-top: $line-height-default / 2;
+    margin-bottom: $line-height-default / 2;
+    .video-wrapper {
+        // Play-button triangle
+        &::before {
+            content: normal;
+        }
+        a {
+            img {
+                padding: 0;
+            }
+        }
+    }
+    .video-description {
+        font-family: $font-text-secondary;
+        margin: 0;
+        text-align: left;
+        .video-link-wrapper {
+            margin-left: $line-height-default / 4;
+            color: $color-accent;
+        }
+    }
+}

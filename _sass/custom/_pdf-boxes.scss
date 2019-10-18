@@ -7,19 +7,20 @@
         font-size: 100%;
         font-style: normal;
         font-weight: bold;
-        margin: 0 0 ($line-height-default / 2) 0;
+        &:first-child {
+            margin-top: 0;
+        }
     }
 }
 
 @mixin icon-position {
     margin-left: $line-height-default * 2;
-    min-height: $line-height-default * 1.5; // avoids icon overlapping edge of box
     &::before {
         // @include icon as if here for each different icon class
         display: block;
         float: left;
         margin-left: -($line-height-default * 2);
-        margin-top: $line-height-default / 6;
+        margin-top: -($line-height-default / 2);
         padding-right: $line-height-default / 2;
     }
 }
@@ -27,6 +28,7 @@
 @mixin fact-box($accent-color: $color-accent, $tab-color: $color-accent, $tab-border-color: $color-accent, $tab-text-color: white) {
     @include box();
     border-top: ($rule-thickness * 3) solid $tab-border-color;
+    clear: inside; // overrides mixin box()
     font-family: $font-text-secondary;
     font-size: 90%; // sans-serif font is bigger visually
     margin-top: $line-height-default * 2.5; // make space for 'fact box' tab
@@ -45,12 +47,16 @@
         padding: ($line-height-default / 4) ($line-height-default / 2);
         position: absolute;
         text-transform: uppercase;
-        top: -2.7em; // magic number
+        top: -2.55em; // magic number
         left: -0.05em; // magic number
     }
     // Bold is colour of box
     strong {
         color: $accent-color;
+    }
+    p {
+        margin-bottom: $line-height-default;
+        text-indent: 0;
     }
     // Facts with icons
     .icon-brain {
@@ -69,12 +75,17 @@
 
 .box {
     @include custom-box-styles();
+    &.pdf-wide {
+        width: $content-width;
+        margin-outside: -($sidebar-text-width + $sidebar-margin-inside);
+    }
 }
 .fact-box {
     @include fact-box();
 }
 .tip-box {
     @include fact-box($lightblue, transparent, $lightblue, $lightblue);
+    @include sidebar();
     &::before {
         content: "Tip"
     }

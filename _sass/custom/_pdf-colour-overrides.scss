@@ -4,13 +4,21 @@
     // Background colour changes
     .fact-box::before,
     #content table th:not(:empty),
-    &.tool h1[class*="icon-"]::before {
+    &.tool h1[class*="icon-"]::before,
+    .definition {
         background-color: $color;
     }
     // Light background-colour changes
     #content .box,
     #content .fact-box {
         background-color: $lightlightcolor;
+    }
+    // Light border-colour changes
+    #content .box,
+    #content .fact-box {
+        border-left-color: $lightlightcolor;
+        border-right-color: $lightlightcolor;
+        border-bottom-color: $lightlightcolor;
     }
     // Text colour changes
     #content h1,

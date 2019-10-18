@@ -3,14 +3,17 @@
 // Headings
 
 @mixin heading-1() {
+    clear: inside;
     color: $color-accent;
     font-weight: normal;
+    margin-outside: -($sidebar-text-width + $sidebar-margin-inside);
     strong:first-of-type {
         display: block;
     }
 }
 
 @mixin heading-2() {
+    clear: inside;
     font-size: $font-size-default * 1.3;
 }
 
@@ -20,23 +23,6 @@
     }
     h2 {
         @include heading-2();
-    }
-}
-
-// Links
-
-// We use blue as an accent colour, so we need extra affordances that links are clickable.
-#content {
-    a {
-        border-bottom: $rule-thickness dashed $lightgrey;
-        &:hover {
-            border-bottom-color: $grey;
-        }
-    }
-    .nav-slides {
-        a {
-            border-bottom: none;
-        }
     }
 }
 
@@ -54,8 +40,13 @@
     table {
         @include table-colours();
         font-family: $font-text-secondary;
+        width: $main-text-width - 0.01pt; // lets sidebar float beside
         th, td {
             border: $rule-thickness solid $lightgrey;
+        }
+        &.pdf-wide {
+            width: $content-width;
+            margin-outside: -($sidebar-margin-inside + $sidebar-text-width);
         }
     }
 }

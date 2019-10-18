@@ -3,28 +3,33 @@
 // Overrides EBT default .pullquote and .source
 
 @mixin custom-pullquote($color: $color-accent) {
-    border-top: $rule-thickness solid $color;
-    border-bottom: $rule-thickness solid $color;
+    @include sidebar();
     color: $color;
     font-family: $font-text-secondary;
-    font-size: 1.2em;
-    line-height: 1.3;
-    padding: $line-height-default / 2;
+    font-size: $font-size-default;
+    line-height: $line-height-default;
+    padding: 0;
+    page-break-inside: avoid;
     text-align: left;
     .source {
         color: $grey;
-        font-size: 70%;
-        font-style: normal;
-        em { font-style: italic; }
-        margin-top: -1em;
-        padding-left: $line-height-default * 2;
-        text-align: right;
+        font-size: $font-size-default * 0.9;
+        font-style: italic;
+        em { font-style: normal; }
+        line-height: $line-height-default;
+        margin: ($line-height-default / 2) 0;
         &::before {
-            content: "\2013" " ";
+            content: normal;
         }
     }
 }
 
 .pullquote {
     @include custom-pullquote();
+    &.pdf-wide {
+        float: none;
+        width: $main-text-width;
+        margin-inside: 0;
+        margin-outside: 0;
+    }
 }
