@@ -2,7 +2,6 @@
 title: Customised features
 ---
 
-{% raw %}{% comment %}Don't process Liquid tags{% endcomment %}
 
 # Customized features
 
@@ -22,7 +21,10 @@ Modify tables with:
 
 Modify definitions with:
 
+{% raw %}{% comment %}Don't process Liquid tags{% endcomment %}
 - `class="pdf-wide"` as a parameter in `{% include definition %}`
-
-
 {% endraw %}
+
+## Headings
+
+- In boxes, during page refinement you may need to remove space from the tops of headings in boxes that run over pages. To do that, add `.pdf-no-space-above` to the heading
