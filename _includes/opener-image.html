@@ -1,0 +1,63 @@
+{% capture opener-image-html %}
+
+{% comment %}Inserts an opener-image defined in page YAML frontmatter.
+Assumes that the `metadata` include has already appeared.{% endcomment %}
+
+{% comment %}Do this if the page is a chapter and it has an image{% endcomment %}
+{% if page.image and page.image != "" and page.style contains "home" %}
+
+    {% comment %}Get the image filename{% endcomment %}
+    {% capture image %}{{ page.image }}{% endcapture %}
+        {% assign image-filetype = image | split: "." %}
+        {% assign image-without-filetype = image-filetype[0] %}
+
+    {% comment %}Get the image credit{% endcomment %}
+    {% capture image-credit %}{{ page.image-credit }}{% endcapture %}
+
+    {% comment %}Get the image description{% endcomment %}
+    {% capture image-description %}{{ page.image-description }}{% endcapture %}
+
+    {% comment %}Create custom object-position style{% endcomment %}
+    {% if page.image-focus and page.image-focus != "" %}
+        {% capture opener-image-focus %}object-position: {{ page.image-focus }};{% endcapture %}
+    {% endif %}
+
+    {% comment %} Redefine image location if not in a book {% endcomment %}
+    {% unless is-book-subdirectory %}
+        {% capture opener-images-for-root-directory %}assets/images/{{ site.output }}{% endcapture %}
+        {% assign images = opener-images-for-root-directory %}
+    {% endunless %}
+
+    <div class="opener-image">
+
+        {% if site.output == "web" %}
+
+            <img src="{{ images }}/{{ image }}" srcset="{{ images }}/{{ image-without-filetype }}-320.{{ image-filetype[1] }} 320w, {{ images }}/{{ image-without-filetype }}-640.{{ image-filetype[1] }} 640w, {{ images }}/{{ image-without-filetype }}-1024.{{ image-filetype[1] }} 1024w, {{ images }}/{{ image-without-filetype }}-2048.{{ image-filetype[1] }} 1280w" sizes="(min-width: 600px) 1300px, 100vw" alt="{{ image-description }}{% if image-credit and image-credit != "" %} ({{ image-credit }}){% endif %}" style="{{ opener-image-focus }}"/>
+
+        {% else %}
+
+            <img src="{{ images }}/{{ image }}" alt="{{ image-description }}{% if image-credit and image-credit != "" %} ({{ image-credit }}){% endif %}"" />
+
+        {% endif %}
+
+    </div>
+
+    {% if page.image-caption and page.image-caption != "" %}
+        <div class="opener-image-caption-wrapper">
+            <div class="opener-image-caption">
+                {{ page.image-caption | markdownify | replace: "<p>", "" | replace: "</p>", "" | strip_newlines }}
+                <span class="opener-image-credit">
+                    {{ page.image-credit | markdownify | replace: "<p>", "" | replace: "</p>", "" | strip_newlines }}
+                </span>
+            </div>
+        </div>
+    {% endif %}
+
+{% else %}
+
+    <div class="opener-image opener-image-none">
+    </div>
+
+{% endif %}
+
+{% endcapture %}{{ opener-image-html | strip_newlines | strip }}

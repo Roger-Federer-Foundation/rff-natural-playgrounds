@@ -59,3 +59,22 @@
         }
     }
 }
+
+#footer {
+    .footer-content {
+        display: flex;
+        font-size: 0.7em;
+        justify-content: space-between;
+        line-height: $line-height-default;
+        max-width: none;
+        .logos {
+            display: flex;
+            width: 8em;
+            .logo {
+                display: inline-block;
+                height: 2em;
+                margin-right: 1em;
+            }
+        }
+    }
+}

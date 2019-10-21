@@ -1,6 +1,15 @@
     <div id="footer">
         <div class="footer-content">
 
+            <div class="logos">
+                <div class="logo">
+                    {% include image file="penreach-logo.png" path="assets/images/web" %}
+                </div>
+                <div class="logo">
+                    {% include image file="rff-logo.png" path="assets/images/web" %}
+                </div>
+            </div>
+
             <p>
                 {{ project-credit | strip | markdownify | remove: '<p>' | remove: '</p>' | strip_newlines }}
             </p>

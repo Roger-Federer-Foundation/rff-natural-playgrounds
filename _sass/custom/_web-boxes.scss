@@ -81,3 +81,22 @@
         content: "Tip"
     }
 }
+.tool-box {
+    @include fact-box();
+    &::before {
+        content: "Tools"
+    }
+    ul {
+        list-style-type: none;
+        margin: 0;
+        a {
+            border-bottom-width: 0!important;
+                &:hover {
+                    border-bottom-width: $rule-thickness!important;
+                }
+        }
+    }
+    @media only screen and (min-width: $break-width-small) {
+        column-count: 2;
+    }
+}
