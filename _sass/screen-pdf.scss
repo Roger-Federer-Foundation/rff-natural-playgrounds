@@ -142,7 +142,7 @@ $start-depth: $line-height-default * 6 !default;
 
 // Style of page numbers on frontmatter pages
 // Remember to tag links to front matter pages in your TOC with {:.frontmatter-reference}
-$frontmatter-reference-style: lower-roman !default; // lower-roman, decimal, see http://www.princexml.com/doc/gen-content/#idp54010640
+$frontmatter-reference-style: decimal !default; // lower-roman, decimal, see http://www.princexml.com/doc/gen-content/#idp54010640
 
 // Set the content of headers and footers.
 //
