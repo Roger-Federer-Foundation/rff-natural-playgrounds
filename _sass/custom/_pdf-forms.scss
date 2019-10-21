@@ -33,6 +33,7 @@
             color: $color-text-main;
             font-size: $font-size-default;
             padding: 0;
+            page-break-after: avoid;
         }
         // Form input hint
         td:nth-child(2) {
@@ -41,6 +42,7 @@
             font-size: $font-size-default * 0.8;
             line-height: $line-height-default;
             padding: 0;
+            page-break-after: avoid;
         }
         // Form input field
         td:nth-child(3) {
