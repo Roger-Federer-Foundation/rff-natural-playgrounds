@@ -10,7 +10,7 @@ style: title-page
 
 {{ subtitle }}
 {:.title-page-subtitle}
-
+^
 {{ creator }}
 {:.title-page-author}
 

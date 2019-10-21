@@ -477,6 +477,7 @@ $print-page-headers-footers-style: true !default; // Sets styling for headers an
 // Custom styles
 @import 'custom/icons';
 @import 'custom/pdf-typography';
+@import 'custom/pdf-prelims';
 @import 'custom/pdf-boxes';
 @import 'custom/pdf-definitions';
 @import 'custom/pdf-figures';
