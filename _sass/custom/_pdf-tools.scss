@@ -4,14 +4,28 @@
     background-color: $grey;
     border-radius: $line-height-default / 4;
     float: left;
-    height: $line-height-default * 1.3;
-    margin-right: $line-height-default / 4;
+    height: $line-height-default * 3.5;
+    margin-right: $line-height-default;
     padding-top: ($line-height-default / 5);
     padding-bottom: 0;
     padding-left: ($line-height-default / 10);
     padding-right: ($line-height-default / 10);
-    width: $line-height-default * 1.3;
+    width: $line-height-default * 3.5;
 }
+
+@mixin heading-1-tools() {
+    @include heading-1();
+    text-align: left;
+}
+
+.tool {
+    h1 {
+        @include heading-1-tools();
+    }
+}
+
+
+// Add icons
 
 .tool {
     h1 {
