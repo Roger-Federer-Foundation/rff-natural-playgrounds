@@ -477,6 +477,7 @@ $print-page-setup-lightning-source: false !default; // Removes crop marks and se
 
 // Custom styles
 @import 'custom/icons';
+@import 'custom/pdf-typography';
 @import 'custom/pdf-boxes';
 @import 'custom/pdf-definitions';
 @import 'custom/pdf-figures';
@@ -484,7 +485,6 @@ $print-page-setup-lightning-source: false !default; // Removes crop marks and se
 @import 'custom/pdf-pullquotes';
 @import 'custom/pdf-sidenotes';
 @import 'custom/pdf-tools';
-@import 'custom/pdf-typography';
 @import 'custom/pdf-video';
 @import 'custom/pdf-colour-overrides';
 

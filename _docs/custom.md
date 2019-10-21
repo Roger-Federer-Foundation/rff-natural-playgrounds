@@ -17,6 +17,12 @@ Modify tables with:
 
 - `{:.pdf-wide}` (or `<table class="wide">`): expands table into sidebar
 
+### Forms
+
+Tables that are presented as forms:
+
+- `.pdf-wide` extends them across the full page width
+
 ## Definitions
 
 Modify definitions with:

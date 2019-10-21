@@ -476,6 +476,7 @@ $print-page-headers-footers-style: true !default; // Sets styling for headers an
 
 // Custom styles
 @import 'custom/icons';
+@import 'custom/pdf-typography';
 @import 'custom/pdf-boxes';
 @import 'custom/pdf-definitions';
 @import 'custom/pdf-figures';
@@ -483,7 +484,6 @@ $print-page-headers-footers-style: true !default; // Sets styling for headers an
 @import 'custom/pdf-pullquotes';
 @import 'custom/pdf-sidenotes';
 @import 'custom/pdf-tools';
-@import 'custom/pdf-typography';
 @import 'custom/pdf-video';
 @import 'custom/pdf-colour-overrides';
 

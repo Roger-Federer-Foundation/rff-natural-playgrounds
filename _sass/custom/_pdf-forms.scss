@@ -1,15 +1,18 @@
 // Checklists
 
-.list-to-checklist {
-    // border: $rule-thickness solid $lightgrey;
-    font-family: $font-text-secondary;
-    font-size: 80%; // sans-serif has larger glyphs
-    margin-bottom: $line-height-default;
-    .checklist-item {
-        // border-bottom: $rule-thickness solid $lightgrey;
-        margin-bottom: $line-height-default / 2;
-        &:last-child {
-            margin-bottom: 0;
+// In web output, we use JS to convert .list-to-checklist lists
+// to actual HTML checkboxes, and .table-to-form to forms.
+// In PDF, we just use CSS to get the same visual effect.
+
+.checklist {
+    list-style-type: none;
+    li {
+        margin-left: $line-height-default;
+        &::before {
+            @include icon-square($black-50, 1em);
+            float: left;
+            margin-left: -($line-height-default);
+            margin-top: 0.175em; // magic number for positioning
         }
     }
 }
@@ -17,22 +20,39 @@
 
 // Forms
 
-.table-to-form {
+#content table.form {
+    border: none;
     font-family: $font-text-secondary;
-    label {
-        color: $color-accent;
-        display: block;
-        margin-bottom: $line-height-default / 4;
+    tr {
+        td {
+            display: block;
+        }
+        // Form label
+        td:first-child {
+            border: none;
+            color: $color-accent;
+            font-size: $font-size-default;
+            padding: 0;
+        }
+        // Form input hint
+        td:nth-child(2) {
+            border: none;
+            color: $grey;
+            font-size: $font-size-default * 0.8;
+            line-height: $line-height-default;
+            padding: 0;
+        }
+        // Form input field
+        td:nth-child(3) {
+            color: $black-30;
+            font-size: $font-size-default * 0.8;
+            height: $line-height-default * 4;
+            line-height: $line-height-default;
+            margin-bottom: $line-height-default;
+            text-align: right;
+        }
     }
-    .input-hint {
-        color: $grey;
-        font-size: 1em * $font-size-smaller;
-        line-height: $line-height-default;
-        margin-bottom: $line-height-default / 2;
-    }
-    textarea {
-        border-radius: $line-height-default / 4;
-        border-color: $lightgrey;
-        margin-top: 0;
+    .pdf-wide {
+        margin-outside: -($sidebar-text-width + $sidebar-margin-inside);
     }
 }
