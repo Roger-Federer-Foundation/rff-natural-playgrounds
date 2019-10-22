@@ -33,6 +33,18 @@
     textarea {
         border-radius: $line-height-default / 4;
         border-color: $lightgrey;
+        margin-bottom: 0; // save button adds space
         margin-top: 0;
+    }
+}
+
+
+// Buttons
+
+.textarea-save-button-wrapper {
+    text-align: right;
+    .textarea-save-button {
+        @include button();
+        margin-bottom: $line-height-default;
     }
 }
