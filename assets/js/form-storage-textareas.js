@@ -36,11 +36,23 @@ function ebSaveAllTextareas() {
     });
 }
 
+// Show save feedback
+function ebTextareaSaveFeedback(button) {
+    'use strict';
+    button.classList.add('saved');
+    button.value = 'Saved'
+    setTimeout(function () {
+        button.classList.remove('saved');
+        button.value = 'Save'
+    }, 1000);
+}
+
 // Listen for save
 function ebTextareaSaveListener(button) {
     'use strict';
     button.addEventListener('click', function () {
         ebSaveAllTextareas();
+        ebTextareaSaveFeedback(button)
     });
 }
 

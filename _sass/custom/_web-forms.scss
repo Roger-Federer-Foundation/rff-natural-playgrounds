@@ -46,5 +46,8 @@
     .textarea-save-button {
         @include button();
         margin-bottom: $line-height-default;
+        &.saved {
+            background-color: $lightgreen;
+        }
     }
 }
