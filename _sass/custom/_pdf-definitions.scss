@@ -1,0 +1,26 @@
+// Definition boxes
+
+.definition {
+    @include sidebar();
+    background-color: $color-accent;
+    border-radius: $box-border-radius;
+    color: white;
+    margin-top: $line-height-default * 0.25;
+    margin-bottom: $line-height-default * 0.75;
+    padding: $line-height-default / 2;
+    page-break-inside: avoid;
+    dt {
+        font-family: $font-text-secondary;
+        font-size: $font-size-default * 0.8;
+        text-transform: uppercase;
+    }
+    dd {
+        margin: 0;
+    }
+    &.pdf-wide {
+        float: none;
+        margin-inside: 0;
+        margin-outside: 0;
+        width: $main-text-width;
+    }
+}

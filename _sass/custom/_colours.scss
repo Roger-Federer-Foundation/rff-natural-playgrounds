@@ -15,6 +15,7 @@ $black-70: #393c3f; // cmyk(66%, 57%, 52%, 55%)
 $black-80: #2b2d30; // cmyk(69%, 61%, 56%, 66%)
 $true-black: #231f20; // cmyk(0%, 0%, 0%, 100%)
 $rich-black: #000119; // cmyk(96%, 70%, 46%, 86%)
+$black: $true-black;
 
 $blue: #418ab3; // cmyk(75%, 36%, 15%, 0%)
 $lightblue: #adc1d8; // cmyk(36%, 17%, 8%, 2%)
@@ -51,6 +52,7 @@ $lightlightgrey: $black-10;
     $black-80: cmyk(69%, 61%, 56%, 66%); // #2b2d30
     $true-black: cmyk(0%, 0%, 0%, 100%); // #231f20
     $rich-black: cmyk(96%, 70%, 46%, 86%); // #000119
+    $black: $true-black;
 
     $blue: cmyk(75%, 36%, 15%, 0%); // #418ab3
     $lightblue: cmyk(14%, 3%, 1%, 0%); // #d7e8f4

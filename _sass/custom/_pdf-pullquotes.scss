@@ -1,0 +1,35 @@
+// Pull quotes
+
+// Overrides EBT default .pullquote and .source
+
+@mixin custom-pullquote($color: $color-accent) {
+    @include sidebar();
+    color: $color;
+    font-family: $font-text-secondary;
+    font-size: $font-size-default;
+    line-height: $line-height-default;
+    padding: 0;
+    page-break-inside: avoid;
+    text-align: left;
+    .source {
+        color: $grey;
+        font-size: $font-size-default * 0.9;
+        font-style: italic;
+        em { font-style: normal; }
+        line-height: $line-height-default;
+        margin: ($line-height-default / 2) 0;
+        &::before {
+            content: normal;
+        }
+    }
+}
+
+.pullquote {
+    @include custom-pullquote();
+    &.pdf-wide {
+        float: none;
+        width: $main-text-width;
+        margin-inside: 0;
+        margin-outside: 0;
+    }
+}

@@ -1,27 +1,35 @@
 // .box
 // .fact-box
-//     Tip boxes (similar style to fact boxes)
+// .tip-box (similar style to fact boxes)
 
 @mixin custom-box-styles() {
+    box-decoration-break: clone;
+    text-indent: 0!important; // when box applied to paragraph directly
     h2, h3, h4, h5, h6 {
         font-size: 100%;
         font-style: normal;
         font-weight: bold;
         &:first-child {
             margin-top: 0;
+            padding-top: 0;
         }
+        &.pdf-no-space-above {
+            margin-top: 0;
+        }
+    }
+    ul, ol {
+        margin-bottom: 0;
     }
 }
 
 @mixin icon-position {
     margin-left: $line-height-default * 2;
-    min-height: $line-height-default * 1.5; // avoids icon overlapping edge of box
     &::before {
         // @include icon as if here for each different icon class
         display: block;
         float: left;
         margin-left: -($line-height-default * 2);
-        margin-top: $line-height-default / 6;
+        margin-top: -($line-height-default / 2);
         padding-right: $line-height-default / 2;
     }
 }
@@ -29,10 +37,13 @@
 @mixin fact-box($accent-color: $color-accent, $tab-color: $color-accent, $tab-border-color: $color-accent, $tab-text-color: white) {
     @include box();
     border-top: ($rule-thickness * 3) solid $tab-border-color;
+    clear: inside; // overrides mixin box()
     font-family: $font-text-secondary;
     font-size: 90%; // sans-serif font is bigger visually
     margin-top: $line-height-default * 2.5; // make space for 'fact box' tab
+    page-break-inside: avoid;
     position: relative;
+    text-indent: 0!important; // when box applied to paragraph directly
     // Tab above box
     &::before {
         background-color: $tab-color;
@@ -47,12 +58,16 @@
         padding: ($line-height-default / 4) ($line-height-default / 2);
         position: absolute;
         text-transform: uppercase;
-        top: -2.7em; // magic number
+        top: -2.55em; // magic number
         left: -0.05em; // magic number
     }
     // Bold is colour of box
     strong {
         color: $accent-color;
+    }
+    p {
+        margin-bottom: $line-height-default;
+        text-indent: 0;
     }
     // Facts with icons
     .icon-brain {
@@ -71,32 +86,18 @@
 
 .box {
     @include custom-box-styles();
+    &.pdf-wide {
+        width: $content-width;
+        margin-outside: -($sidebar-text-width + $sidebar-margin-inside);
+    }
 }
 .fact-box {
     @include fact-box();
 }
 .tip-box {
     @include fact-box($lightblue, transparent, $lightblue, $lightblue);
+    @include sidebar();
     &::before {
         content: "Tip"
-    }
-}
-.tool-box {
-    @include fact-box();
-    &::before {
-        content: "Tools"
-    }
-    ul {
-        list-style-type: none;
-        margin: 0;
-        a {
-            border-bottom-width: 0!important;
-                &:hover {
-                    border-bottom-width: $rule-thickness!important;
-                }
-        }
-    }
-    @media only screen and (min-width: $break-width-small) {
-        column-count: 2;
     }
 }

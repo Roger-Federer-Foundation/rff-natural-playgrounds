@@ -1,0 +1,101 @@
+// Colour overrides
+
+@mixin body-colour-overrides($color, $lightcolor, $lightlightcolor) {
+    // Background colour changes
+    .fact-box::before,
+    #content table th:not(:empty),
+    &.tool h1[class*="icon-"]::before,
+    .definition {
+        background-color: $color;
+    }
+    // Light background-colour changes
+    #content .box,
+    #content .fact-box {
+        background-color: $lightlightcolor;
+    }
+    // Light border-colour changes
+    #content .box,
+    #content .fact-box {
+        border-left-color: $lightlightcolor;
+        border-right-color: $lightlightcolor;
+        border-bottom-color: $lightlightcolor;
+    }
+    #content .tip-box {
+        border-left-color: $lightcolor;
+        border-right-color: $lightcolor;
+        border-bottom-color: $lightcolor;
+    }
+    // Text colour changes
+    #content h1,
+    #content h2,
+    #content .box h2,
+    #content .box h3,
+    #content .box h4,
+    #content .box h5,
+    #content .box h6,
+    #content .fact-box h2,
+    #content .fact-box h3,
+    #content .fact-box h4,
+    #content .fact-box h5,
+    #content .fact-box h6,
+    #content .fact-box strong,
+    .pullquote,
+    #content table,
+    .slides .figure .figure-body .title,
+    .table-to-form label {
+        color: $color;
+    }
+    .tip-box::before {
+        color: $lightcolor;
+    }
+    // Border changes
+    .fact-box::before {
+        border-color: $color;
+    }
+    .tip-box::before {
+        border-color: $lightcolor;
+    }
+    .fact-box,
+    .pullquote,
+    #footer {
+        border-top-color: $color;
+    }
+    .tip-box {
+        border-top-color: $lightcolor;
+    }
+    .pullquote {
+        border-bottom-color: $color;
+    }
+    // Icon colour changes
+    .icon-brain::before {
+        @include icon-brain($color, $line-height-default * 2);
+    }
+    .icon-key::before {
+        @include icon-key($color, $line-height-default * 2);
+    }
+}
+
+body {
+    & {
+        // Default
+        @include body-colour-overrides($blue, $lightblue, $lightlightblue)
+    }
+    &.blue {
+        @include body-colour-overrides($blue, $lightblue, $lightlightblue)
+    }
+    &.purple {
+        @include body-colour-overrides($purple, $lightpurple, $lightlightpurple)
+    }
+    &.green {
+        @include body-colour-overrides($green, $lightgreen, $lightlightgreen)
+    }
+    &.yellow {
+        @include body-colour-overrides($yellow, $lightyellow, $lightlightyellow)
+    }
+    &.red {
+        @include body-colour-overrides($red, $lightred, $lightlightred)
+    }
+    &.grey {
+        @include body-colour-overrides($grey, $lightgrey, $lightlightgrey)
+    }
+}

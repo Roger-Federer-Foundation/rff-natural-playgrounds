@@ -52,11 +52,21 @@ exclude:
   - /*/images/web
   - /*/images/epub
   - /*/images/app
+  - downloads
 # Temporarily exclude these and keep_files them below
 # for faster builds where you don't need to refresh these.
   # - /assets/fonts
   # - /book/fonts
   # - /book/styles
+  # - book/text/0-* # prelims
+  # - book/text/01*
+  # - book/text/02*
+  # - book/text/03*
+  # - book/text/04*
+  # - book/text/05*
+  # - book/text/06*
+  # - book/text/07*
+  # - book/text/50* # endmatter
 # Populate the keep_files list for temporary faster builds
 # or to keep previously generated files for other formats.
 keep_files:

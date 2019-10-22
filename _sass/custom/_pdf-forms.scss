@@ -1,0 +1,60 @@
+// Checklists
+
+// In web output, we use JS to convert .list-to-checklist lists
+// to actual HTML checkboxes, and .table-to-form to forms.
+// In PDF, we just use CSS to get the same visual effect.
+
+.checklist {
+    list-style-type: none;
+    li {
+        margin-left: $line-height-default;
+        &::before {
+            @include icon-square($black-50, 1em);
+            float: left;
+            margin-left: -($line-height-default);
+            margin-top: 0.175em; // magic number for positioning
+        }
+    }
+}
+
+
+// Forms
+
+#content table.form {
+    border: none;
+    font-family: $font-text-secondary;
+    tr {
+        td {
+            display: block;
+        }
+        // Form label
+        td:first-child {
+            border: none;
+            color: $color-text-main;
+            font-size: $font-size-default;
+            padding: 0;
+            page-break-after: avoid;
+        }
+        // Form input hint
+        td:nth-child(2) {
+            border: none;
+            color: $grey;
+            font-size: $font-size-default * 0.8;
+            line-height: $line-height-default;
+            padding: 0;
+            page-break-after: avoid;
+        }
+        // Form input field
+        td:nth-child(3) {
+            color: $black-30;
+            font-size: $font-size-default * 0.8;
+            height: $line-height-default * 4;
+            line-height: $line-height-default;
+            margin-bottom: $line-height-default;
+            text-align: right;
+        }
+    }
+    .pdf-wide {
+        margin-outside: -($sidebar-text-width + $sidebar-margin-inside);
+    }
+}

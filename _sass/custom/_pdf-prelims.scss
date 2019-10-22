@@ -1,0 +1,60 @@
+// PDF prelims
+
+@page title-page {
+    background-color: $color-accent;
+}
+
+.title-page {
+    margin-outside: -($sidebar-text-width + $sidebar-margin-inside);
+    text-align: left;
+    .title-page-title {
+        text-align: left;
+        color: white;
+        font-size: $font-size-default * 7;
+        line-height: 1.1;
+        padding-top: $line-height-default * 8;
+    }
+    .title-page-author {
+        font-family: $font-text-main;
+        margin-left: $line-height-default;
+        margin-top: $line-height-default * 2;
+        text-align: left;
+    }
+    .title-page-publisher {
+        font-family: $font-text-secondary;
+        margin-left: $line-height-default;
+        transform: none;
+    }
+}
+
+.copyright-page {
+    p, ul, ol, dl {
+        text-align: right;
+    }
+}
+
+.contents-page {
+    ol.toc-list {
+        margin-bottom: $line-height-default;
+        li.toc-entry-title {
+            font-family: $font-text-secondary;
+            font-weight: bold;
+            &.toc-frontmatter {
+                margin-bottom: $line-height-default;
+            }
+            &.toc-endmatter {
+                margin-top: $line-height-default;
+            }
+            a::after {
+                font-family: $font-text-main;
+                font-weight: normal;
+            }
+            ol.toc-list {
+                li.toc-entry-title {
+                    font-family: $font-text-main;
+                    font-weight: normal;
+                }
+            }
+        }
+    }
+}

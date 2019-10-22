@@ -27,12 +27,12 @@ $output-format: "print-pdf" !default;
 $edition-suffix: null !default;
 
 // First, we set several variables related to overall page setup.
-$page-width: 152mm !default;
-$page-height: 229mm !default;
-$margin-top: 20mm !default;
+$page-width: 210mm !default;
+$page-height: 297mm !default;
+$margin-top: 25mm !default; // allow for running header
 $margin-bottom: 20mm !default;
-$margin-outside: 20mm !default;
-$margin-inside: 20mm !default;
+$margin-outside: 65mm !default;
+$margin-inside: 18mm !default;
 $bleed: 3mm !default;
 $trim: 3mm !default;
 $crop-marks: crop !default; // crop | none
@@ -44,7 +44,7 @@ $columns-default: 1 !default;
 // to 'true' in the list of partials below, where it is disabled by default.
 // For guidance on sidebar variables, see partials/_pdf-sidebar.scss.
 // 1. Set the margin between the page edge and the sidebar:
-$sidebar-margin-outside: 10mm !default;
+$sidebar-margin-outside: 18mm !default;
 // 2. The number of 'columns' in your page grid:
 $grid-columns: 3 !default;
 // 3. As a single integer, set the ratio of the column width to column-gap width.
@@ -52,15 +52,17 @@ $grid-columns: 3 !default;
 //    A higher number makes the column wider, and the gap smaller.
 //    A lower number makes the column narrower, and the gap wider.
 $column-gap-ratio: 10 !default;
+// 4. Then use @mixin sidebar() to move elements into the sidebar
 
 // Colours
+@import 'custom/colours';
 $colorspace: cmyk !default; // auto | none | rgb | cmyk | gray
-$color-text-main: cmyk(0,0,0,1) !default;
-$color-text-secondary: cmyk(0,0,0,0.8) !default;
+$color-text-main: $black !default;
+$color-text-secondary: $black-80 !default;
 $color-background: transparent !default;
-$color-light: cmyk(0,0,0,0.2) !default;
-$color-mid: cmyk(0,0,0,0.4) !default;
-$color-accent: cmyk(0,0,0,1) !default;
+$color-light: $black-10 !default;
+$color-mid: $black-30 !default;
+$color-accent: $blue !default;
 $color-links: inherit !default;
 $color-highlight: #ffd54d !default;
 
@@ -85,10 +87,10 @@ $convert-images-to-color-profile: false !default; // 'true' may convert true bla
 // Using prince-no-fallback triggers a warning and aborts PDF creation
 // if any glyphs are not found in the specified font, instead of switching to another one.
 // This is recommended for books where perfect reproduction among users is important.
-$font-text-main: "Crimson", prince-no-fallback !default;
-$font-text-secondary: "Source Sans Pro", prince-no-fallback !default;
-$font-display-main: "Source Sans Pro", prince-no-fallback !default;
-$font-display-secondary: "Crimson", prince-no-fallback !default;
+$font-text-main: "Crimson Pro", prince-no-fallback !default;
+$font-text-secondary: "Open Sans", prince-no-fallback !default;
+$font-display-main: "Open Sans", prince-no-fallback !default;
+$font-display-secondary: "Crimson Pro", prince-no-fallback !default;
 $font-code: "Ubuntu Mono", prince-no-fallback !default;
 
 // Finally, we set variables related to text flow.
@@ -96,7 +98,7 @@ $font-size-default: 11pt !default;
 $line-height-default: 15pt !default; // Set in points. For consistent baselines, all other line heights and vertical spaces are based on this.
 $font-size-smaller: 0.8 !default; // How much smaller than font-size-default for features like sidenotes and footers?
 $font-size-bigger: 2 !default; // How many times bigger than font-size-default for features like headings and pullquotes? Use whole numbers to preserve baseline grid.
-$text-align: justify !default; // left or right or inside or outside or justify or center
+$text-align: left !default; // left or right or inside or outside or justify or center
 $orphans: 1 !default; // Minimum number of lines that must be left at the bottom of the first page
 $widows: 1 !default; // Minimum number of lines that must be left at the top of the second page
 $letter-spacing-text: 0em !default; // Default letter-spacing for p, ul, ol, dl. Set in ems, e.g. 0.01em for 10/1000s of an em.
@@ -140,7 +142,7 @@ $start-depth: $line-height-default * 6 !default;
 
 // Style of page numbers on frontmatter pages
 // Remember to tag links to front matter pages in your TOC with {:.frontmatter-reference}
-$frontmatter-reference-style: lower-roman !default; // lower-roman, decimal, see http://www.princexml.com/doc/gen-content/#idp54010640
+$frontmatter-reference-style: decimal !default; // lower-roman, decimal, see http://www.princexml.com/doc/gen-content/#idp54010640
 
 // Set the content of headers and footers.
 //
@@ -166,14 +168,14 @@ $verso-top-left: normal !default;
 $verso-top-right: normal !default;
 $verso-top-left-corner: normal !default;
 $verso-top-right-corner: normal !default;
-$verso-bottom: counter(page) !default;
+$verso-bottom: normal !default;
 $verso-bottom-left: normal !default;
 $verso-bottom-right: normal !default;
 $verso-bottom-left-corner: normal !default;
 $verso-bottom-right-corner: normal !default;
 $verso-left: normal !default;
 $verso-left-top: normal !default;
-$verso-left-bottom: normal !default;
+$verso-left-bottom: counter(page) !default;
 $verso-right: normal !default;
 $verso-right-top: normal !default;
 $verso-right-bottom: normal !default;
@@ -184,7 +186,7 @@ $recto-top-left: normal !default;
 $recto-top-right: normal !default;
 $recto-top-left-corner: normal !default;
 $recto-top-right-corner: normal !default;
-$recto-bottom: counter(page) !default;
+$recto-bottom: normal !default;
 $recto-bottom-left: normal !default;
 $recto-bottom-right: normal !default;
 $recto-bottom-left-corner: normal !default;
@@ -194,7 +196,7 @@ $recto-left-top: normal !default;
 $recto-left-bottom: normal !default;
 $recto-right: normal !default;
 $recto-right-top: normal !default;
-$recto-right-bottom: normal !default;
+$recto-right-bottom: counter(page) !default;
 
 // Verso (left-hand-page) for .frontmatter pages (`style: frontmatter`)
 $verso-top-frontmatter: string(page-header) !default;
@@ -202,14 +204,14 @@ $verso-top-left-frontmatter: normal !default;
 $verso-top-right-frontmatter: normal !default;
 $verso-top-left-corner-frontmatter: normal !default;
 $verso-top-right-corner-frontmatter: normal !default;
-$verso-bottom-frontmatter: counter(page, $frontmatter-reference-style) !default;
+$verso-bottom-frontmatter: normal !default;
 $verso-bottom-left-frontmatter: normal !default;
 $verso-bottom-right-frontmatter: normal !default;
 $verso-bottom-left-corner-frontmatter: normal !default;
 $verso-bottom-right-corner-frontmatter: normal !default;
 $verso-left-frontmatter: normal !default;
 $verso-left-top-frontmatter: normal !default;
-$verso-left-bottom-frontmatter: normal !default;
+$verso-left-bottom-frontmatter: counter(page, $frontmatter-reference-style) !default;
 $verso-right-frontmatter: normal !default;
 $verso-right-top-frontmatter: normal !default;
 $verso-right-bottom-frontmatter: normal !default;
@@ -220,7 +222,7 @@ $recto-top-left-frontmatter: normal !default;
 $recto-top-right-frontmatter: normal !default;
 $recto-top-left-corner-frontmatter: normal !default;
 $recto-top-right-corner-frontmatter: normal !default;
-$recto-bottom-frontmatter: counter(page, $frontmatter-reference-style) !default;
+$recto-bottom-frontmatter: normal !default;
 $recto-bottom-left-frontmatter: normal !default;
 $recto-bottom-right-frontmatter: normal !default;
 $recto-bottom-left-corner-frontmatter: normal !default;
@@ -230,7 +232,7 @@ $recto-left-top-frontmatter: normal !default;
 $recto-left-bottom-frontmatter: normal !default;
 $recto-right-frontmatter: normal !default;
 $recto-right-top-frontmatter: normal !default;
-$recto-right-bottom-frontmatter: normal !default;
+$recto-right-bottom-frontmatter: counter(page, $frontmatter-reference-style) !default;
 
 // Set styles for headers and footers
 $header-font: $font-text-secondary !default;
@@ -247,30 +249,30 @@ $header-space-from-top: $margin-top / 2 + ($line-height-default / 4) !default; /
 $header-space-from-text: $line-height-default !default;
 $footer-space-from-bottom: $margin-bottom / 2 !default;
 $footer-space-from-text: $line-height-default !default;
-$header-text-align: center !default;
+$header-text-align: outside !default;
 $footer-text-align: center !default;
-$header-text-color: $color-text-main !default;
-$footer-text-color: $color-text-main !default;
+$header-text-color: $black-50 !default;
+$footer-text-color: $black-50 !default;
 $left-margin-font: $header-font !default;
 $left-margin-font-size: $header-font-size !default;
 $left-margin-font-weight: $header-font-weight !default;
 $left-margin-case: $header-case !default;
 $left-margin-letter-spacing: $header-letter-spacing !default;
-$left-margin-alignment: top !default;
-$left-margin-space-from-edge: $margin-outside / 2 !default;
-$left-margin-space-from-text: $margin-outside / 2 - $left-margin-font-size !default;
-$left-margin-text-align: $header-text-align !default;
-$left-margin-text-color: $color-text-main !default;
+$left-margin-alignment: bottom !default;
+$left-margin-space-from-edge: $sidebar-margin-outside !default;
+$left-margin-space-from-text: $margin-inside !default;
+$left-margin-text-align: outside !default;
+$left-margin-text-color: $black-50 !default;
 $right-margin-font: $header-font !default;
 $right-margin-font-size: $header-font-size !default;
 $right-margin-font-weight: $header-font-weight !default;
 $right-margin-case: $header-case !default;
 $right-margin-letter-spacing: $header-letter-spacing !default;
-$right-margin-alignment: top !default;
-$right-margin-space-from-edge: $margin-outside / 2 + $right-margin-font-size !default;
-$right-margin-space-from-text: $margin-outside / 2 - $right-margin-font-size !default;
+$right-margin-alignment: outside !default;
+$right-margin-space-from-edge: $sidebar-margin-outside !default;
+$right-margin-space-from-text: $margin-inside !default;
 $right-margin-text-align: $header-text-align !default;
-$right-margin-text-color: $color-text-main !default;
+$right-margin-text-color: $black-50 !default;
 
 // Special highlights for temporary debugging/viewing:
 // Specify a colour for highlighting; use 'inherit' for none.
@@ -336,7 +338,7 @@ $print-index: true !default;
 $print-questions: true !default;
 $print-select-questions: true !default;
 $print-cross-refs: true !default;
-$print-sidebar: false !default; // Note that this is disabled by default
+$print-sidebar: true !default; // Note that this is disabled by default
 $print-reset-sequences: true !default; // Resets p indents, margins after other elements. Must be last @import in list.
 $print-page-headers-footers-content: true !default; // Sets content for headers and footers
 $print-page-headers-footers-style: true !default; // Sets styling for headers and footers
@@ -347,6 +349,71 @@ $print-page-setup-lightning-source: false !default; // Removes crop marks and se
 // ----------------------------------------------------
 
 // Default font-face rules added by print-font-faces partial below.
+/* Crimson Pro https://github.com/Fonthausen/CrimsonPro */
+@font-face {
+    font-family: "Crimson Pro";
+    src: url(../../assets/fonts/CrimsonPro-Regular.ttf);
+}
+@font-face {
+    font-family: "Crimson Pro";
+    src: url(../../assets/fonts/CrimsonPro-Italic.ttf);
+    font-style: italic;
+}
+@font-face {
+    font-family: "Crimson Pro";
+    src: url(../../assets/fonts/CrimsonPro-Bold.ttf);
+    font-weight: bold;
+}
+@font-face {
+    font-family: "Crimson Pro";
+    src: url(../../assets/fonts/CrimsonPro-BoldItalic.ttf);
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* Open Sans https://fonts.google.com/specimen/Open+Sans */
+@font-face {
+    font-family: "Open Sans";
+    src: url(../../assets/fonts/OpenSans-Regular.ttf);
+}
+@font-face {
+    font-family: "Open Sans";
+    src: url(../../assets/fonts/OpenSans-RegularItalic.ttf);
+    font-style: italic;
+}
+@font-face {
+    font-family: "Open Sans";
+    src: url(../../assets/fonts/OpenSans-Bold.ttf);
+    font-weight: bold;
+}
+@font-face {
+    font-family: "Open Sans";
+    src: url(../../assets/fonts/OpenSans-BoldItalic.ttf);
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* Ubuntu Mono http://font.ubuntu.com/ */
+@font-face {
+    font-family: "Ubuntu Mono";
+    src: url(../../assets/fonts/UbuntuMono-R.ttf);
+}
+@font-face {
+    font-family: "Ubuntu Mono";
+    src: url(../../assets/fonts/UbuntuMono-I.ttf);
+    font-style: italic;
+}
+@font-face {
+    font-family: "Ubuntu Mono";
+    src: url(../../assets/fonts/UbuntuMono-B.ttf);
+    font-weight: bold;
+}
+@font-face {
+    font-family: "Ubuntu Mono";
+    src: url(../../assets/fonts/UbuntuMono-BI.ttf);
+    font-weight: bold;
+    font-style: italic;
+}
 
 // ---------------------
 // Import theme partials
@@ -405,9 +472,25 @@ $print-page-setup-lightning-source: false !default; // Removes crop marks and se
 @import "partials/print-questions";
 @import "partials/print-select-questions";
 @import "partials/print-cross-refs";
-@import "partials/print-reset-sequences"; // Resets p indents, margins after other elements. Must be last @import in list.
 @import "partials/print-page-headers-footers-content"; // Sets content for headers and footers
 @import "partials/print-page-headers-footers-style"; // Sets styling for headers and footers
+
+// Custom styles
+@import 'custom/icons';
+@import 'custom/pdf-typography';
+@import 'custom/pdf-prelims';
+@import 'custom/pdf-boxes';
+@import 'custom/pdf-definitions';
+@import 'custom/pdf-figures';
+@import 'custom/pdf-forms';
+@import 'custom/pdf-pullquotes';
+@import 'custom/pdf-sidenotes';
+@import 'custom/pdf-tools';
+@import 'custom/pdf-video';
+@import 'custom/pdf-colour-overrides';
+
+// Resets
+@import "partials/print-reset-sequences"; // Resets p indents, margins after other elements. Must be last @import in list.
 
 // Lightning Source setup
 @import "partials/print-page-setup-lightning-source"; // Removes crop marks and sets 3mm trim for Lightning Source

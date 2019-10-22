@@ -50,7 +50,7 @@ $font-size-bigger: 2 !default; // How many times bigger than font-size-default f
 $spaced-paras: true !default;
 
 // Rounded corners
-$button-border-radius: 0.1em !default; // Roundness of button corners
+$button-border-radius: 0.25em !default; // Roundness of button corners
 $box-border-radius: 0.5em !default; // Roundness of box corners
 
 // Rules, lines
@@ -107,7 +107,7 @@ $text-divider-image: "" !default;
 $text-divider-image-width: $line-height-default * 2 !default;
 
 // Footer
-$footer-text-color: $color-text-main !default;
+$footer-text-color: white !default;
 $footer-background-color: $color-accent !default;
 $footer-border-color: $color-accent !default;
 
@@ -263,7 +263,7 @@ $web-reset-sequences: true !default; // This should stay last in the @import lis
 }
 @font-face {
     font-family: "Open Sans";
-    src: url(../../assets/fonts/OpenSans-Italic.ttf);
+    src: url(../../assets/fonts/OpenSans-RegularItalic.ttf);
     font-style: italic;
 }
 @font-face {
@@ -379,7 +379,6 @@ $web-reset-sequences: true !default; // This should stay last in the @import lis
 @import 'custom/web-colour-overrides';
 @import 'custom/web-definitions';
 @import 'custom/web-figures';
-@import 'custom/web-flowcharts';
 @import 'custom/web-forms';
 @import 'custom/web-home';
 @import 'custom/web-navigation';
