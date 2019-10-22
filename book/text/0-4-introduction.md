@@ -6,11 +6,11 @@ title: "Introduction"
 
 # Introduction
 
-When children play, they are developing skills, habits and attitudes that will stay with them for the rest of their lives. Play is so important for the development of a child that it has been identified by the United Nations[^1] as a right of every child.
+When children play in the early years of their lives, they are developing skills, habits and attitudes that become the foundation for their schooling and adult work life, and will stay with them for the rest of their lives. Play is so important for the development of a child that it has been identified by the United Nations[^1] as a right of every child.
 
 [^1]: United Nations High Commission for Human Rights
 
-The skills required to properly develop self-discipline, motivation, and the ability to collaborate, all start to take root in the first six years of life. Through play, children learn how to cope with frustration, how to keep trying until they get it right, how to share with others, and how to express themselves.
+The skills required to properly develop self-discipline, motivation, and the ability to collaborate, all start to take root in the first six years of life. Through play, children learn how to cope with frustration, how to keep trying until they get it right, how to share with others, and how to express themselves. In addition, the foundations for reading, writing and maths are also laid down during play, ensuring that children are ready for school.
 
 {% include youtube
     id=""
@@ -27,21 +27,21 @@ In many places children lack stimulating play opportunities. The Natural Playgro
 
 {% include definition term="Stakeholders (Partners)" %}
 
-The Natural Playgrounds Toolkit is a manual designed for you as a grade R teacher, early childhood development practitioner, community development worker, and all other interested **stakeholders**{:data-term="Stakeholders (Partners)"} to study individually or as a group.
+The Natural Playgrounds Toolkit is a manual designed for you as a grade R teacher, early childhood development practitioner, community development worker, and all other interested **stakeholders**{:data-term="Stakeholders (Partners)"} to study individually or as a group. It is meant for you to study individually or use for your discussions as a group and provides you with guidance and tools required to build a natural playground.
 
 ### How was it developed?
 
-Penreach, with the support of the [Roger Federer Foundation](https://www.rogerfedererfoundation.org/en/home/) piloted the natural playgrounds project to establish a cost-effective educational outdoor environment that covers all spheres of a child’s development using natural products that can be sourced locally, within the community or surrounding areas. The Natural Playground Toolkit was developed to make this initiative available to other schools and communities.
+Penreach, with the support of the [Roger Federer Foundation](https://www.rogerfedererfoundation.org/en/home/) piloted the natural playgrounds initiative in several locations in Mpumalanga, South Africa, with local communities and schools. Another Roger Federer Foundation partner, Molteno, also drew lessons from the Penreach natural playgrounds initiatives and have also replicated natural playgrounds in several schools and communities in Limpopo Province in South Africa. Through this practical experience and lessons learnt during these pilots, this natural playground manual was then developed. So, what you are learning here has been practically applied successfully!
 
 ### How should it be used?
 
 {% include definition term="Natural Playground" %}
 
-The toolkit is divided into five sections that represent the different steps within the process of establishing a **natural playground**{:data-term="Natural Playground"}. In the toolkit you will find a toolbox of practical tools and samples that will help you consider everything necessary to make a success of your project. The toolkit will guide you through the whole process of establishing a natural playground in collaboration with parents and your local community.
+The toolkit is divided into five sections that represent the different steps to be followed in establishing a **natural playground**{:data-term="Natural Playground"}. In the toolkit you will find a toolbox of practical tools and samples that will help you consider everything necessary to make a success of your project. The toolkit will guide you step by step through the whole process of establishing a natural playground in collaboration with parents and your local community.
 
 {% include definition term="Resources" %}
 
-While you work through the toolkit, you are encouraged to keep a journal or a set of notes that can help you reflect on your journey and also to note down discussion points for your learning group. At first glance, some of the tools may seem to contain similar information. Each tool, however, forms a specific part of the process that enables you to get to the end result. There is no hard and fast rule that you have to use them all, or use them all exactly as they are presented. If you are an experienced community development worker some of the tools may seem so obvious that you could feel tempted to skip them. We do strongly suggest that you consider the pros and cons carefully before discarding a tool. Remember, however, that our goal is to leverage the experience, expertise and **resources**{:data-term="Resources"} that community members and **stakeholders**{:data-term="Stakeholders (Partners)"} bring to the table.
+While you work through the toolkit, you are encouraged to keep a journal or a set of notes that can help you reflect on your journey and also to note down discussion points for your learning group. At first glance, some of the tools may seem to contain similar information, but they are all actually important in their own right and build on each other. Each tool, therefore forms a specific part of the process that enables you to get to the end result. There is no hard and fast rule that you have to use them all, or use them all exactly as they are presented – adapt and be creative as you see fit. If you are an experienced community development worker some of the tools may seem so obvious that you could feel tempted to skip them. We do strongly suggest that you consider the pros and cons carefully before discarding a tool. Remember, however, that our goal is to leverage the experience, expertise and **resources**{:data-term="Resources"} that you and your community members and **stakeholders**{:data-term="Stakeholders (Partners)"} bring to the table collectively, and help you all  successfully build your children the best natural playground with as much natural resources and with  as little financial cost to you as a school or community as possible.
 
 > ## Children’s right to play
 > 
