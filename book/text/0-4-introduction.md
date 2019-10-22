@@ -97,5 +97,5 @@ While you work through the toolkit, you are encouraged to keep a journal or a se
 > -   Play as a principle in early learning that government is duty‐bound to provide
 > -   Increase the knowledge of parents and caregivers of the developmental value of play
 > -   Play‐sensitive planning and increased allocation of resources through town planning processes to make adequate play facilities available
-{:.box}
+{:.box.float-top-next}
 

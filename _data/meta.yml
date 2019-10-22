@@ -130,11 +130,11 @@ works:
           - label: "Section 3: Assess"
             file: "03"
             children:
-              - label: "What is a need assessment?"
+              - label: "What is a needs assessment?"
                 file: "03"
-              - label: "How to do a need assessment"
+              - label: "How to do a needs assessment"
                 file: "03"
-                id: "how-to-do-a-need-assessment"
+                id: "how-to-do-a-needs-assessment"
           - label: "Section 4: Act"
             file: "04"
             children:
@@ -152,7 +152,7 @@ works:
                 file: "05"
                 id: "how-to-approach-monitoring-and-evaluation"
           - label: "Toolbox"
-            file: "06"
+            file: "06-00"
             children:
               - label: "Tools at a glance"
                 file: "06-00"
