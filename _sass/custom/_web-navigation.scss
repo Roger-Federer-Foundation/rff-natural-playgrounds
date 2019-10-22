@@ -41,3 +41,16 @@
         }
     }
 }
+
+// Accordion
+
+#content {
+    [role="tab"] {
+        a {
+            border-bottom-width: 0;
+        }
+        &[data-accordion="closed"] {
+            font-size: 1em;
+        }
+    }
+}
