@@ -4,7 +4,9 @@
 
 @mixin custom-box-styles() {
     box-decoration-break: clone;
+    clear: none;
     text-indent: 0!important; // when box applied to paragraph directly
+    width: $main-text-width - 0.01pt;
     h2, h3, h4, h5, h6 {
         font-size: 100%;
         font-style: normal;
