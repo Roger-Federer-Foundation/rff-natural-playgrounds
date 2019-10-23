@@ -1,6 +1,6 @@
 ---
 title: Title page
-style: title-page
+style: title-page page-1
 ---
 
 {% include metadata %}
