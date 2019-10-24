@@ -28,7 +28,7 @@
         position: absolute;
         @media only screen and (min-width: $break-width-medium) {
             position: fixed;
-            bottom: 2em;
+            top: 5.75em; // align with first heading
         }
     }
     .pagination-previous {
@@ -37,7 +37,7 @@
         position: absolute;
         @media only screen and (min-width: $break-width-medium) {
             position: fixed;
-            bottom: 2em;
+            top: 5.75em; // align with first heading
         }
     }
 }
