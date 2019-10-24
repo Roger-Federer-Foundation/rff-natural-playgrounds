@@ -19,6 +19,15 @@ function ebListToChecklistSlugify(string) {
         .replace(/-+$/, '') // Trim - from end of text
 }
 
+// Return a slug of the page URL, without the hash,
+// for use in localStorage key prefixes.
+function ebListToChecklistLocationSlug() {
+    'use strict';
+    var locationSlug = ebListToChecklistSlugify(window.location.href.split('#')[0]);
+    return locationSlug;
+}
+
+// Create the form from a list
 function ebListToChecklistCreateForm(list, number) {
     'use strict';
 
@@ -35,7 +44,9 @@ function ebListToChecklistCreateForm(list, number) {
         listItemContent = listItems[i].innerHTML;
         checklistItem = document.createElement('input');
         checklistItem.type = 'checkbox';
-        checklistItem.id = ebListToChecklistSlugify(listItems[i].innerText) + '-' + number;
+        checklistItem.id = ebListToChecklistLocationSlug()
+            + '-' + ebListToChecklistSlugify(listItems[i].innerText)
+            + '-' + number;
         checklistItem.name = checklistItem.id;
 
         // Create the label
@@ -59,6 +70,7 @@ function ebListToChecklistCreateForm(list, number) {
     list.remove();
 }
 
+// Main process
 function ebListToChecklist() {
     'use strict';
 
