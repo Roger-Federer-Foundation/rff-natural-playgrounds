@@ -10,9 +10,12 @@
     .nav-slides,
     #nav .nav-list ol li.active,
     #nav .nav-list ol li:hover,
-    #footer,
+    // #footer,
     .definition-description-hover button.close {
         background-color: $color;
+    }
+    #footer {
+        background: linear-gradient(270deg, $color 40%, rgba(255,255,255,0.35616244788931195) 100%); 
     }
     // Light background-colour changes
     #content .box,
@@ -58,8 +61,7 @@
         border-color: $lightcolor;
     }
     .fact-box,
-    .pullquote,
-    #footer {
+    .pullquote {
         border-top-color: $color;
     }
     .tip-box {
