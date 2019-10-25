@@ -34,6 +34,8 @@ layout: null
     
     {% include_relative list-to-checklist.js %}
     {% include_relative table-to-form.js %}
+    {% include_relative form-storage-checkboxes.js %}
+    {% include_relative form-storage-textareas.js %}
 
 {% endif %}
 

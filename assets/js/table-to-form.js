@@ -30,6 +30,14 @@ function ebTablesToFormsSlugify(string) {
         .replace(/-+$/, '') // Trim - from end of text
 }
 
+// Return a slug of the page URL, without the hash,
+// for use in localStorage key prefixes.
+function ebListToChecklistLocationSlug() {
+    'use strict';
+    var locationSlug = ebListToChecklistSlugify(window.location.href.split('#')[0]);
+    return locationSlug;
+}
+
 // Connert a table
 function ebTableToForm(table, number) {
     'use strict';
@@ -54,7 +62,9 @@ function ebTableToForm(table, number) {
 
         // Create an input, input-hint, and a label
         input = document.createElement('textarea');
-        input.id = ebTablesToFormsSlugify(rows[i].innerText) + '-' + number;
+        input.id = ebListToChecklistLocationSlug()
+            + '-' + ebTablesToFormsSlugify(rows[i].innerText)
+            + '-' + number;
         input.name = input.id;
 
         inputHint = document.createElement('p');
