@@ -14,16 +14,13 @@
     .definition-description-hover button.close {
         background-color: $color;
     }
-    #footer {
-        background: linear-gradient(270deg, $color 40%, rgba(255,255,255,0.35616244788931195) 100%); 
-    }
     // Light background-colour changes
     #content .box,
     #content .fact-box {
         background-color: $lightlightcolor;
     }
     // Text colour changes
-    #content a,
+    #content a:not(.button),
     #content [role="tab"] a,
     #content h1,
     #content h2,
