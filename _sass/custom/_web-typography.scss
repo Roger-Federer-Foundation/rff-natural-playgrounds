@@ -69,12 +69,17 @@
         max-width: none;
         .logos {
             display: flex;
-            width: 8em;
             .logo {
                 display: inline-block;
-                height: 2em;
+                height: 3em;
                 margin-right: 1em;
+                img {
+                    max-height: 100%;
+                }
             }
+        }
+        p {
+            text-align: right;
         }
     }
 }
