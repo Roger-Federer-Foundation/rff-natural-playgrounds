@@ -2,6 +2,7 @@
 
 @mixin body-colour-overrides($color, $lightcolor, $lightlightcolor) {
     // Background colour changes
+    &, // body
     .nav-button,
     .fact-box::before,
     #content table th:not(:empty),
@@ -9,7 +10,8 @@
     .nav-slides,
     #nav .nav-list ol li.active,
     #nav .nav-list ol li:hover,
-    #footer {
+    // #footer,
+    .definition-description-hover button.close {
         background-color: $color;
     }
     // Light background-colour changes
@@ -18,6 +20,8 @@
         background-color: $lightlightcolor;
     }
     // Text colour changes
+    #content a:not(.button),
+    #content [role="tab"] a,
     #content h1,
     #content h2,
     #content .box h2,
@@ -38,22 +42,23 @@
     #nav .nav-title,
     .masthead a,
     .pagination .pagination-next a,
-    .pagination .pagination-previous a {
+    .pagination .pagination-previous a,
+    [data-term] {
         color: $color;
     }
     .tip-box::before {
         color: $lightcolor;
     }
     // Border changes
-    .fact-box::before {
+    .fact-box::before,
+    .definition-description-hover {
         border-color: $color;
     }
     .tip-box::before {
         border-color: $lightcolor;
     }
     .fact-box,
-    .pullquote,
-    #footer {
+    .pullquote {
         border-top-color: $color;
     }
     .tip-box {

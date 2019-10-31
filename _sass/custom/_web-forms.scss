@@ -11,6 +11,9 @@
         &:last-child {
             margin-bottom: 0;
         }
+        input[type="checkbox"] {
+            margin-right: $line-height-default / 4;
+        }
     }
 }
 
