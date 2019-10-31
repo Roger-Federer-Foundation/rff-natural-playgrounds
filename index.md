@@ -35,7 +35,7 @@ The Natural Playgrounds Toolkit helps to develop a deeper understanding of the i
 - [**Tool 2** Playground Map](book/text/06-02.html)
 - [**Tool 3** Playground Dreams](book/text/06-03.html)
 - [**Tool 4** Resource Inventory](book/text/06-04.html)
-- [**Tool 5** Issue FInder](book/text/06-05.html)
+- [**Tool 5** Issue Finder](book/text/06-05.html)
 - [**Tool 6** Risk Benefit Assessment](book/text/06-06.html)
 - [**Tool 7** Formulating objectives](book/text/06-07.html)
 - [**Tool 8** Resource Plan](book/text/06-08.html)
