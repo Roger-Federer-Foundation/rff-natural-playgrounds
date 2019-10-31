@@ -60,7 +60,7 @@
         font-size: 1.3em;
         list-style-type: none;
         margin: auto;
-        width: 20em;
+        max-width: 20em;
         li {
             margin-bottom: $line-height-default;
             a {
