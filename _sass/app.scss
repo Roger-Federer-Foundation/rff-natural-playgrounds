@@ -31,10 +31,10 @@ $max-width-default: 40em !default;
 // - 'display' fonts are used for headings and similar short-string features.
 // For each category, we set a main font and a secondary font, allowing up to four fonts.
 // Finally, we set a fifth, monospace font for elements like computer code.
-$font-text-main: "Crimson", serif !default;
-$font-text-secondary: "Source Sans Pro", sans-serif !default;
-$font-display-main: "Source Sans Pro", sans-serif !default;
-$font-display-secondary: "Crimson", serif !default;
+$font-text-main: "Crimson Pro", serif !default;
+$font-text-secondary: "Open Sans", sans-serif !default;
+$font-display-main: "Open Sans", sans-serif !default;
+$font-display-secondary: "Crimson Pro", serif !default;
 $font-code: "Ubuntu Mono", monospace !default;
 
 // Set font size and line-height in ems or px.
@@ -50,29 +50,30 @@ $font-size-bigger: 2 !default; // How many times bigger than font-size-default f
 $spaced-paras: true !default;
 
 // Rounded corners
-$button-border-radius: 0.1em !default; // Roundness of button corners
+$button-border-radius: 0.25em !default; // Roundness of button corners
 $box-border-radius: 0.5em !default; // Roundness of box corners
 
 // Rules, lines
 $rule-thickness: 1px !default;
 
 // Colours
+@import 'custom/colours';
 $color-text-main: #222222 !default;
 $color-text-secondary: #222222 !default;
 $color-background: white !default;
-$color-light: #e0e0e0 !default;
-$color-mid: #9c9c9c !default;
-$color-accent: #009E7F !default;
-$color-links: #5f738c !default;
+$color-light: $black-10 !default;
+$color-mid: $black-70 !default;
+$color-accent: $blue !default;
+$color-links: $blue !default;
 $color-buttons: $color-accent !default;
 $color-buttons-hover: darken( $color-buttons, 20% ) !default;
 $color-highlight: #ffd54d !default;
-$color-notification-low-text: $color-light !default;
-$color-notification-medium-text: $color-light !default;
-$color-notification-high-text: $color-light !default;
-$color-notification-low-background: #009E7F !default;
-$color-notification-medium-background: #ffe388 !default;
-$color-notification-high-background: #ff7c4d !default;
+$color-notification-low-text: $black-70 !default;
+$color-notification-medium-text: $black-70 !default;
+$color-notification-high-text: $black-70 !default;
+$color-notification-low-background: $lightgreen !default;
+$color-notification-medium-background: $lightyellow !default;
+$color-notification-high-background: $lightred !default;
 
 // Some features rearrange at certain screen sizes.
 // What are your screen-width break points?
@@ -106,14 +107,14 @@ $text-divider-image: "" !default;
 $text-divider-image-width: $line-height-default * 2 !default;
 
 // Footer
-$footer-text-color: $color-text-main !default;
-$footer-background-color: $color-accent !default;
-$footer-border-color: $color-accent !default;
+$footer-text-color: $black-70 !default;
+$footer-background-color: white !default;
+$footer-border-color: $color-light !default;
 
 // Website masthead
-$masthead-text-color: $color-light !default;
-$masthead-background-color: $color-accent !default;
-$masthead-border-color: $color-light !default;
+$masthead-text-color: $color-accent !default;
+$masthead-background-color: white !default;
+$masthead-border-color: white !default;
 $masthead-breadcrumb-divider: "\2044" !default; // 2044 is a fraction slash
 
 // Website sidebar/navigation
@@ -125,10 +126,10 @@ $nav-bar-children-prompt-hide: "\2212" !default; // \2212 is an actual minus sig
 $nav-bar-scrollbar: true !default;
 $nav-bar-width: 15em !default;
 $nav-bar-fixed: true !default; // fixed is not fully supported on many mobile browsers
-$nav-bar-back-button-hide: false !default;
-$nav-bar-title-color: $color-text-secondary !default;
-$nav-bar-label-color: $color-light !default;
-$nav-bar-label-background-color: $masthead-background-color !default;
+$nav-bar-back-button-hide: true !default;
+$nav-bar-title-color: $color-accent !default;
+$nav-bar-label-color: $color-background !default;
+$nav-bar-label-background-color: $color-accent !default;
 $nav-bar-label-border-color: transparent !default;
 $nav-bar-border-color: $color-light !default;
 $nav-bar-background-color: white !default;
@@ -233,6 +234,72 @@ $web-reset-sequences: true !default; // This should stay last in the @import lis
 
 // Import fonts from book-specific CSS.
 
+/* Crimson Pro https://github.com/Fonthausen/CrimsonPro */
+@font-face {
+    font-family: "Crimson Pro";
+    src: url(../../assets/fonts/CrimsonPro-Regular.ttf);
+}
+@font-face {
+    font-family: "Crimson Pro";
+    src: url(../../assets/fonts/CrimsonPro-Italic.ttf);
+    font-style: italic;
+}
+@font-face {
+    font-family: "Crimson Pro";
+    src: url(../../assets/fonts/CrimsonPro-Bold.ttf);
+    font-weight: bold;
+}
+@font-face {
+    font-family: "Crimson Pro";
+    src: url(../../assets/fonts/CrimsonPro-BoldItalic.ttf);
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* Open Sans https://fonts.google.com/specimen/Open+Sans */
+@font-face {
+    font-family: "Open Sans";
+    src: url(../../assets/fonts/OpenSans-Regular.ttf);
+}
+@font-face {
+    font-family: "Open Sans";
+    src: url(../../assets/fonts/OpenSans-RegularItalic.ttf);
+    font-style: italic;
+}
+@font-face {
+    font-family: "Open Sans";
+    src: url(../../assets/fonts/OpenSans-Bold.ttf);
+    font-weight: bold;
+}
+@font-face {
+    font-family: "Open Sans";
+    src: url(../../assets/fonts/OpenSans-BoldItalic.ttf);
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* Ubuntu Mono http://font.ubuntu.com/ */
+@font-face {
+    font-family: "Ubuntu Mono";
+    src: url(../../assets/fonts/UbuntuMono-R.ttf);
+}
+@font-face {
+    font-family: "Ubuntu Mono";
+    src: url(../../assets/fonts/UbuntuMono-I.ttf);
+    font-style: italic;
+}
+@font-face {
+    font-family: "Ubuntu Mono";
+    src: url(../../assets/fonts/UbuntuMono-B.ttf);
+    font-weight: bold;
+}
+@font-face {
+    font-family: "Ubuntu Mono";
+    src: url(../../assets/fonts/UbuntuMono-BI.ttf);
+    font-weight: bold;
+    font-style: italic;
+}
+
 // ---------------------
 // Theme modules
 // ---------------------
@@ -305,6 +372,20 @@ $web-reset-sequences: true !default; // This should stay last in the @import lis
 @import "partials/web-controls";
 @import "partials/web-annotator";
 @import "partials/web-language-select";
+
+// Custom styles
+@import 'custom/icons';
+@import 'custom/web-boxes';
+@import 'custom/web-colour-overrides';
+@import 'custom/web-definitions';
+@import 'custom/web-figures';
+@import 'custom/web-forms';
+@import 'custom/web-home';
+@import 'custom/web-navigation';
+@import 'custom/web-pullquotes';
+@import 'custom/web-sidenotes';
+@import 'custom/web-tools';
+@import 'custom/web-typography';
 
 // Logic (if this then that)
 @import "partials/web-reset-sequences"; // This should stay last in the @import list
