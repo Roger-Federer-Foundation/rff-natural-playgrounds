@@ -4,7 +4,9 @@
     @include sidebar();
     margin-top: $line-height-default / 2;
     margin-bottom: $line-height-default / 2;
+    page-break-inside: avoid;
     .video-wrapper {
+        page-break-inside: avoid;
         // Play-button triangle
         &::before {
             content: normal;
