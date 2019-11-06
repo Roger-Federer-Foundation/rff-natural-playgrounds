@@ -50,17 +50,17 @@ While you work through the toolkit, you are encouraged to keep a journal or a se
 > **United Nations ‐ Convention on the Rights of the Child**
 > 
 > Article 31:
-> -   Right to leisure, play and culture appropriate to the age of the child
-> -   Right of the child to participate fully in cultural and artistic life
+> *   Right to leisure, play, and culture appropriate to the age of the child.
+> *   Right of the child to participate fully in cultural and artistic life.
 > 
 > Article 12:
-> -   Respect for the views of the child
-> -   Children have the right to have their opinions taken into account
+> *   Respect for the views of the child.
+> *   Children have the right to have their opinions taken into account.
 > 
 > **African Charter on the Rights and Welfare of the Child**
 > 
 > Article 12:
-> -   Right of the child to rest and leisure, to engage in play and recreational activities appropriate to the age of the child and to participate freely in cultural life and the arts
+> *   Right of the child to rest and leisure, to engage in play and recreational activities appropriate to the age of the child and to participate freely in cultural life and the arts.
 > 
 > ### National Play Policy & Regulations
 > 
@@ -68,20 +68,20 @@ While you work through the toolkit, you are encouraged to keep a journal or a se
 > 
 > “Play is part of early childhood development programmes and school curriculum and children are aware of its importance in their lives.”
 > 
-> -   Ensure that play is an integral part of all early childhood development programmes supporting the early learning of babies and young children.
-> -   Encourage and resource play activities for children and adolescents through the school curriculum.
-> -   Ensure that each community has safe and wellkept play areas for children.
+> *   Ensure that play is an integral part of all early childhood development programmes supporting the early learning of babies and young children.
+> *   Encourage and resource play activities for children and adolescents through the school curriculum.
+> *   Ensure that each community has safe and wellkept play areas for children.
 > 
 > **Children’s Act No. 38 of 2005**
 > 
-> -   Recognises play as a right and requires that “all proceedings, actions or decisions in a matter concerning a child recognise a child’s need for development and to engage in play and other recreational activities appropriate to the child’s age.”
+> *   Recognises play as a right and requires that “all proceedings, actions or decisions in a matter concerning a child recognise a child’s need for development and to engage in play and other recreational activities appropriate to the child’s age.”
 > 
 > **Regulations to the Children’s Act:**
 > 
-> -   Promote children’s rights to rest, leisure and play
-> -   Respect and promote cultural diversity and appreciation
-> -   Design programmes according to children’s age and capacity for development, and meet the needs of the children for whom the services are provided, including children with a disability
-> -   Provide a safe environment where premises and equipment are safe and clean and children are adequately supervised
+> *   Promote children’s rights to rest, leisure and play.
+> *   Respect and promote cultural diversity and appreciation.
+> *   Design programmes according to children’s age and capacity for development, and meet the needs of the children for whom the services are provided, including children with a disability.
+> *   Provide a safe environment where premises and equipment are safe and clean and children are adequately supervised.
 > 
 > **The South African National Curriculum Framework for Children from Birth to Four Years**
 > 
@@ -89,13 +89,13 @@ While you work through the toolkit, you are encouraged to keep a journal or a se
 > 
 > **The National Early Learning and Development Standards for Children From Birth to Four Years**
 > 
-> -   Recognise play as central to achieving early learning milestones.
-> -   Recognises the provision of “opportunities for active play as a universal strategy to be provided by all – parents, caregivers ‐ to enable positive growth and development.”
+> *   Recognise play as central to achieving early learning milestones.
+> *   Recognises the provision of “opportunities for active play as a universal strategy to be provided by all – parents, caregivers ‐ to enable positive growth and development.”
 > 
 > **The National Integrated Early Childhood Development Policy**
 > 
-> -   Play as a principle in early learning that government is duty‐bound to provide
-> -   Increase the knowledge of parents and caregivers of the developmental value of play
-> -   Play‐sensitive planning and increased allocation of resources through town planning processes to make adequate play facilities available
+> *   Play as a principle in early learning that government is duty‐bound to provide.
+> *   Increase the knowledge of parents and caregivers of the developmental value of play.
+> *   Play‐sensitive planning and increased allocation of resources through town planning processes to make adequate play facilities available.
 {:.box.float-top-next}
 
