@@ -66,7 +66,7 @@ While you work through the toolkit, you are encouraged to keep a journal or a se
 > 
 > **The National Plan of Action for Children in South Africa 2012 – 2017**
 > 
-> “Play is part of early childhood development programmes and school curriculum and children are aware of its importance in their lives.”
+> ‘Play is part of early childhood development programmes and school curriculum and children are aware of its importance in their lives.’
 > 
 > *   Ensure that play is an integral part of all early childhood development programmes supporting the early learning of babies and young children.
 > *   Encourage and resource play activities for children and adolescents through the school curriculum.
@@ -74,7 +74,7 @@ While you work through the toolkit, you are encouraged to keep a journal or a se
 > 
 > **Children’s Act No. 38 of 2005**
 > 
-> *   Recognises play as a right and requires that “all proceedings, actions or decisions in a matter concerning a child recognise a child’s need for development and to engage in play and other recreational activities appropriate to the child’s age.”
+> *   Recognises play as a right and requires that ‘all proceedings, actions or decisions in a matter concerning a child recognise a child’s need for development and to engage in play and other recreational activities appropriate to the child’s age.’
 > 
 > **Regulations to the Children’s Act:**
 > 
@@ -85,12 +85,12 @@ While you work through the toolkit, you are encouraged to keep a journal or a se
 > 
 > **The South African National Curriculum Framework for Children from Birth to Four Years**
 > 
-> “Babies, toddlers and young children learn when they play with things around them, what they smell and taste and sound like. They also learn by watching other children play. They learn by watching what adults do. This takes time and adults need to make sure that all children have plenty of opportunities to learn through play, also called active learning.”
+> ‘Babies, toddlers and young children learn when they play with things around them, what they smell and taste and sound like. They also learn by watching other children play. They learn by watching what adults do. This takes time and adults need to make sure that all children have plenty of opportunities to learn through play, also called active learning.’
 > 
 > **The National Early Learning and Development Standards for Children From Birth to Four Years**
 > 
 > *   Recognise play as central to achieving early learning milestones.
-> *   Recognises the provision of “opportunities for active play as a universal strategy to be provided by all – parents, caregivers ‐ to enable positive growth and development.”
+> *   Recognises the provision of ‘opportunities for active play as a universal strategy to be provided by all – parents, caregivers ‐ to enable positive growth and development.’
 > 
 > **The National Integrated Early Childhood Development Policy**
 > 
