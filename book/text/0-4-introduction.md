@@ -13,10 +13,10 @@ When children play in the early years of their lives, they are developing skills
 The skills required to properly develop self-discipline, motivation, and the ability to collaborate, all start to take root in the first six years of life. Through play, children learn how to cope with frustration, how to keep trying until they get it right, how to share with others, and how to express themselves. In addition, the foundations for reading, writing and maths are also laid down during play, ensuring that children are ready for school.
 
 {% include youtube
-    id=""
-    image=".jpg"
-    link=""
-    description="Video 1: Introduction"
+    id="Zr4apg69k_g"
+    image="youtube-Zr4apg69k_g.jpg"
+    link="https://www.youtube.com/watch?v=Zr4apg69k_g"
+    description="Introduction"
 %}
 
 ### What is the Natural Playgrounds Toolkit?
