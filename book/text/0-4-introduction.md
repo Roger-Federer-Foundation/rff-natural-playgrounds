@@ -16,7 +16,7 @@ The skills required to properly develop self-discipline, motivation, and the abi
     id="Zr4apg69k_g"
     image="youtube-Zr4apg69k_g.jpg"
     link="https://www.youtube.com/watch?v=Zr4apg69k_g"
-    description="Introduction"
+    description="[Video: Introduction](https://www.youtube.com/watch?v=Zr4apg69k_g){:.show-url}"
 %}
 
 ### What is the Natural Playgrounds Toolkit?
