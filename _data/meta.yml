@@ -180,7 +180,7 @@ works:
                 file: "06-11"
               - label: "Tool 12: Evaluate Results"
                 file: "06-12"
-          - label: "Facilitator's guide"
+          - label: "Facilitator's Guide"
             file: "07"
             children:
               - label: "Notes for facilitators"
@@ -332,7 +332,7 @@ works:
                 file: "06-11"
               - label: "Tool 12: Evaluate Results"
                 file: "06-12"
-          - label: "Facilitator's guide"
+          - label: "Facilitator's Guide"
             file: "07"
             children:
               - label: "Notes for facilitators"
