@@ -41,7 +41,7 @@ The toolkit is divided into five sections that represent the different steps to 
 
 While you work through the toolkit, you are encouraged to keep a journal or a set of notes that can help you reflect on your journey and also to note down discussion points for your learning group. At first glance, some of the tools may seem to contain similar information, but they are all actually important in their own right and build on each other. Each tool, therefore, forms a specific part of the process that enables you to get to the end result. There is no hard and fast rule that you must use all the tools, or use them all exactly as they are presented – adapt and be creative as you see fit. If you are an experienced community development worker, some of the tools may seem so obvious that you could feel tempted to skip them. We do strongly suggest that you consider the pros and cons carefully before discarding a tool. Remember, however, that our goal is to leverage the experience, expertise and **resources**{:data-term="Resources"} that you and your community members and **stakeholders**{:data-term="Stakeholders (Partners)"} bring to the table collectively, and to help you all successfully build your children the best natural playground with as many natural resources and as little financial cost to you as a school or community as possible.
 
-> ## Children’s right to play
+> ## Children’s legal right to play
 > 
 > ### International laws and regulations on play
 > 
@@ -64,7 +64,9 @@ While you work through the toolkit, you are encouraged to keep a journal or a se
 > 
 > **The National Plan of Action for Children in South Africa 2012–2017**
 > 
-> ‘Play is part of early childhood development programmes and school curriculum and children are aware of its importance in their lives.’
+> ‘Play is part of early childhood development programmes and school curriculum and children are aware of its importance in their lives.’[^2]
+>
+> [^2]: [A Chance to Play Southern Africa. 2017. *The Child’s Right to Play: A Policy Brief for South Africa.* Johannesburg: ACTPSA](http://www.a-chance-to-play.org.za/downloads/Play%20Policy%20Brief%20-%20ACTPSA%20-%20launched%2031%20May%202017.pdf)
 > 
 > *   Ensure that play is an integral part of all early childhood development programmes supporting the early learning of babies and young children.
 > *   Encourage and resource play activities for children and adolescents through the school curriculum.
@@ -72,7 +74,9 @@ While you work through the toolkit, you are encouraged to keep a journal or a se
 > 
 > **Children’s Act 38 of 2005**
 > 
-> *   Recognises play as a right and requires that ‘all proceedings, actions or decisions in a matter concerning a child recognise a child’s need for development and to engage in play and other recreational activities appropriate to the child’s age.’
+> *   Recognises play as a right and requires that ‘all proceedings, actions or decisions in a matter concerning a child recognise a child’s need for development and to engage in play and other recreational activities appropriate to the child’s age.’[^3]
+>
+> [^3]: [Children’s Act 38 of 2005](http://www.justice.gov.za/legislation/acts/2005-038%20childrensact.pdf)
 > 
 > **Regulations to the Children’s Act:**
 > 
@@ -83,7 +87,9 @@ While you work through the toolkit, you are encouraged to keep a journal or a se
 > 
 > **The South African National Curriculum Framework for Children from Birth to Four Years**
 > 
-> ‘Babies, toddlers and young children learn when they play with things around them, what they smell and taste and sound like. They also learn by watching other children play. They learn by watching what adults do. This takes time and adults need to make sure that all children have plenty of opportunities to learn through play, also called active learning.’
+> ‘Babies, toddlers and young children learn when they play with things around them, what they smell and taste and sound like. They also learn by watching other children play. They learn by watching what adults do. This takes time and adults need to make sure that all children have plenty of opportunities to learn through play, also called active learning.’[^3]
+>
+> [^4]: [The South African National Curriculum Framework for Children from Birth to Four Years](https://www.education.gov.za/Curriculum/NationalCurriculumFrameworkforChildrenfromBirthtoFour.aspx)
 > 
 > **The National Early Learning and Development Standards for Children From Birth to Four Years**
 > 
