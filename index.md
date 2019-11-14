@@ -1,8 +1,8 @@
 ---
 title: Home
 style: home
-image: play-type-01.jpg
-image-focus: 50% 20%
+image: cover-photo.jpg
+image-focus: 50% 40%
 ---
 
 # Natural Playgrounds Toolkit
