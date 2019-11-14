@@ -1,7 +1,7 @@
 ---
 title: Home
 style: home
-image: stock-photo-action-portrait-of-shouting-african-kids-playing-on-swing-in-neighborhood-out-of-focus-houses-in-251388160.jpg
+image: play-type-01.jpg
 image-focus: 50% 20%
 ---
 
