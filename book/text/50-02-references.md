@@ -20,5 +20,7 @@ style: chapter
 - [www.playgroundideas.org](http://www.playgroundideas.org)
 - [http://www.playengland.org.uk/media/70684/design‐for‐play.pdf](http://www.playengland.org.uk/media/70684/design%E2%80%90for%E2%80%90play.pdf)
 - [http://valerianllc.com/wp/wp‐content/uploads/2017/11/Nature‐Play‐Design‐Guidelines.pdf](http://valerianllc.com/wp/wp%E2%80%90content/uploads/2017/11/Nature%E2%80%90Play%E2%80%90Design%E2%80%90Guidelines.pdf)
-- [https://children.pan.org.za/sites/default/files/publicationdocuments/Play%20Policy%20Brief%20‐%20ACTPSA%20‐%20launched%2031%20May%202017.pdf](https://children.pan.org.za/sites/default/files/publicationdocuments/Play%20Policy%20Brief%20%E2%80%90%20ACTPSA%20%E2%80%90%20launched%2031%20May%202017.pdf)
+- [A Chance to Play Southern Africa. 2017. *The Child’s Right to Play: A Policy Brief for South Africa.* Johannesburg: ACTPSA](http://www.a-chance-to-play.org.za/downloads/Play%20Policy%20Brief%20-%20ACTPSA%20-%20launched%2031%20May%202017.pdf){:.show-url}
+- [Children’s Act 38 of 2005](http://www.justice.gov.za/legislation/acts/2005-038%20childrensact.pdf){:.show-url}
+- [The South African National Curriculum Framework for Children from Birth to Four Years](https://www.education.gov.za/Curriculum/NationalCurriculumFrameworkforChildrenfromBirthtoFour.aspx){:.show-url}
 
