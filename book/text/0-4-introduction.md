@@ -87,7 +87,7 @@ While you work through the toolkit, you are encouraged to keep a journal or a se
 > 
 > **The South African National Curriculum Framework for Children from Birth to Four Years**
 > 
-> ‘Babies, toddlers and young children learn when they play with things around them, what they smell and taste and sound like. They also learn by watching other children play. They learn by watching what adults do. This takes time and adults need to make sure that all children have plenty of opportunities to learn through play, also called active learning.’[^3]
+> ‘Babies, toddlers and young children learn when they play with things around them, what they smell and taste and sound like. They also learn by watching other children play. They learn by watching what adults do. This takes time and adults need to make sure that all children have plenty of opportunities to learn through play, also called active learning.’[^4]
 >
 > [^4]: [The South African National Curriculum Framework for Children from Birth to Four Years](https://www.education.gov.za/Curriculum/NationalCurriculumFrameworkforChildrenfromBirthtoFour.aspx)
 > 
