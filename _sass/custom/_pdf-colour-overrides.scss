@@ -10,12 +10,14 @@
     }
     // Light background-colour changes
     #content .box,
-    #content .fact-box {
+    #content .fact-box,
+    #content .law-box {
         background-color: $lightlightcolor;
     }
     // Light border-colour changes
     #content .box,
-    #content .fact-box {
+    #content .fact-box,
+    #content .law-box {
         border-left-color: $lightlightcolor;
         border-right-color: $lightlightcolor;
         border-bottom-color: $lightlightcolor;
@@ -39,6 +41,9 @@
     #content .fact-box h5,
     #content .fact-box h6,
     #content .fact-box strong,
+    #content .law-box h2,
+    #content .law-box h3,
+    #content .law-box h4,
     .pullquote,
     #content table,
     .slides .figure .figure-body .title,
