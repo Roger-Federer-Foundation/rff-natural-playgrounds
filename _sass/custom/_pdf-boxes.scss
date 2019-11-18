@@ -60,7 +60,7 @@
         padding: ($line-height-default / 4) ($line-height-default / 2);
         position: absolute;
         text-transform: uppercase;
-        top: -2.55em; // magic number
+        top: -2.55em; // magic number, applied back to tab in tip-box
         left: -0.05em; // magic number
     }
     // Bold is colour of box
@@ -99,7 +99,8 @@
 .tip-box {
     @include fact-box($lightblue, transparent, $lightblue, $lightblue);
     @include sidebar();
+    margin-top: 2.55em; // matches magic number for top above
     &::before {
-        content: "Tip"
+        content: "Tip";
     }
 }

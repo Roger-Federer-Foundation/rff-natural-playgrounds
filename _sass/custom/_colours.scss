@@ -7,6 +7,7 @@
 //     Section 4: orange/yellow
 //     Section 5: red
 
+$white: #fff;
 $black-10: #e1e0dc; // cmyk(4%, 3%, 6%, 7%)
 $black-30: #c6cacb; // cmyk(22%, 15%, 16%, 0%)
 $black-50: #abb1b3; // cmyk(34%, 24%, 25%, 0%)
@@ -44,6 +45,7 @@ $lightlightgrey: $black-10;
 // CYMK values for print output
 @if $output-format == "print-pdf" {
     
+    $white: cmyk(0%, 0%, 0%, 1%); // to avoid not printing
     $black-10: cmyk(4%, 3%, 6%, 7%); // #e1e0dc
     $black-30: cmyk(22%, 15%, 16%, 0%); // #c6cacb
     $black-50: cmyk(34%, 24%, 25%, 0%); // #abb1b3
