@@ -17,6 +17,10 @@
             }
         }
     }
+    p + & + p,
+    p + & + .definition + p {
+        text-indent: $line-height-default;
+    }
     .video-description {
         font-family: $font-text-secondary;
         margin: 0;
