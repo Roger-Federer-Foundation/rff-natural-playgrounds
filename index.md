@@ -2,7 +2,7 @@
 title: Home
 style: home
 image: cover-photo.jpg
-image-focus: 50% 40%
+image-focus: 50% 50%
 ---
 
 # Natural Playgrounds Toolkit
