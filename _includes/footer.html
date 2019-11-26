@@ -1,12 +1,14 @@
+    {% capture path-to-assets-images %}assets/images/{{ site.output }}{% endcapture %}
+
     <div id="footer">
         <div class="footer-content">
 
             <div class="logos">
                 <div class="logo">
-                    {% include image file="penreach-logo.png" path="assets/images/web" %}
+                    {% include image file="penreach-logo.png" path=path-to-assets-images %}
                 </div>
                 <div class="logo">
-                    {% include image file="rff-logo.png" path="assets/images/web" %}
+                    {% include image file="rff-logo.png" path=path-to-assets-images %}
                 </div>
             </div>
 
