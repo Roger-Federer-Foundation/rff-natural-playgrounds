@@ -15,7 +15,7 @@ The Natural Playgrounds Toolkit helps to develop a deeper understanding of the i
 
 [Read online](#home-sections){:.button}
 
-[Download PDF (30MB)](download/natural-playgrounds-toolkit.pdf){:.button}
+[Download PDF (1.6MB)](downloads/natural-playgrounds-toolkit.pdf){:.button}
     
 </div>
 
