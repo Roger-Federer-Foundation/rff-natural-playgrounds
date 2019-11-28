@@ -355,7 +355,7 @@ $web-reset-sequences: true !default; // This should stay last in the @import lis
 @import "partials/web-tables";
 @import "partials/web-letters";
 @import "partials/web-verse";
-@import "partials/web-video";
+// @import "partials/web-video";
 @import "partials/web-pagination";
 @import "partials/web-questions";
 @import "partials/web-select-questions";
@@ -387,6 +387,9 @@ $web-reset-sequences: true !default; // This should stay last in the @import lis
 @import 'custom/web-tools';
 @import 'custom/web-typography';
 @import 'custom/web-notifications';
+
+// Custom class for app videos
+@import 'custom/app-video';
 
 // Logic (if this then that)
 @import "partials/web-reset-sequences"; // This should stay last in the @import list
