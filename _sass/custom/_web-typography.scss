@@ -32,6 +32,12 @@
         &:hover {
             border-bottom-color: $grey;
         }
+        // Don't show this border on certain kinds of link
+        &.button,
+        &.footnote,
+        &.reversefootnote {
+            border-bottom-width: 0;
+        }
     }
     .nav-slides {
         a {
