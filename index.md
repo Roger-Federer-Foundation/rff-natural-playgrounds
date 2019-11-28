@@ -15,7 +15,7 @@ The Natural Playgrounds Toolkit helps to develop a deeper understanding of the i
 
 [Read online](#home-sections){:.button}
 
-[Download PDF (30MB)](download/natural-playgrounds-toolkit.pdf){:.button}
+[Download PDF (1.6MB)](downloads/natural-playgrounds-toolkit.pdf){:.button}
     
 </div>
 
@@ -36,7 +36,7 @@ The Natural Playgrounds Toolkit helps to develop a deeper understanding of the i
 - [**Tool 3** Playground Dreams](book/text/06-03.html)
 - [**Tool 4** Resource Inventory](book/text/06-04.html)
 - [**Tool 5** Issue Finder](book/text/06-05.html)
-- [**Tool 6** Risk Benefit Assessment](book/text/06-06.html)
+- [**Tool 6** Risk–Benefit Assessment](book/text/06-06.html)
 - [**Tool 7** Formulating Objectives](book/text/06-07.html)
 - [**Tool 8** Activity Plan](book/text/06-08.html)
 - [**Tool 9** Monitoring Summary](book/text/06-09.html)

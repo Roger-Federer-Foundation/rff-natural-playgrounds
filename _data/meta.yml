@@ -419,6 +419,7 @@ works:
         identifier: "" # e.g. ISBN or UUID
         image: "cover.jpg"
         files:
+          - "0-0-cover"
           - "0-1-titlepage"
           - "0-2-copyright"
           - "0-3-contents"

@@ -51,3 +51,12 @@
         }
     }
 }
+
+// Save a line (use sparingly!)
+
+// Create save-1 through save-10
+@for $i from 0 through 10 {
+    .save-#{$i} {
+        margin-top: -($line-height-default * $i);
+    }
+}
