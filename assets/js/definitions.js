@@ -31,8 +31,6 @@ function ebDefinitionsMoveDefinitions() {
     // loop over them
     definitionTerms.forEach(function (definitionTerm) {
 
-        console.log('Processing definition for ' + definitionTerm.innerHTML);
-
         // visually hide the old dl, the parent of the definitionTerm
         definitionTerm.parentNode.classList.add('hidden-definition-list');
 
@@ -42,7 +40,6 @@ function ebDefinitionsMoveDefinitions() {
         // Detect presence of em spans
         var definitionTermTextIsItalic;
         if (definitionTermText.indexOf('<em>') !== -1) {
-            console.log(definitionTermText + ' contains italics.');
             definitionTermTextIsItalic = true;
         }
 
@@ -55,7 +52,6 @@ function ebDefinitionsMoveDefinitions() {
         // 2. Straighten quotes in the HTML to match data-terms
         termTextForMatching = termTextForMatching.replace("’", "'");
         termTextForMatching = termTextForMatching.replace("‘", "'");
-        console.log('termTextForMatching: ' + termTextForMatching);
 
         // to check that we even have any terms to define:
         // find a data-term attribute
@@ -173,7 +169,3 @@ var ebDefinitions = function () {
 };
 
 ebDefinitions();
-
-// Debugging logs should be stripped automatically
-// when JS is minified.
-console.log('Debugging definitions.js');

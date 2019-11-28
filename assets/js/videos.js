@@ -90,9 +90,9 @@ function ebVideoShow() {
         var videoWrapper = currentVideo.querySelector('.video-wrapper');
         var iframe = ebVideoMakeIframe(videoHost, videoId, videoLanguage, videoSubtitles);
 
-        console.log('currentVideo: ' + currentVideo);
-        console.log('videoHost: ' + videoHost);
-        console.log('currentVideo ID: ' + videoId);
+        // console.log('currentVideo: ' + currentVideo);
+        // console.log('videoHost: ' + videoHost);
+        // console.log('currentVideo ID: ' + videoId);
 
         currentVideo.addEventListener("click", function (ev) {
             videoWrapper.classList.add('contains-iframe');
