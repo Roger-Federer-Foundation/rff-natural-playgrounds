@@ -184,6 +184,9 @@ en:
     show-sidebar-tooltip-description: "Tap here to show the annotations sidebar. Select text to highlight and create notes on this page."
     show-annotated-text-tooltip-title: "Highlight annotations"
     show-annotated-text-tooltip-description: "Tap here to show or hide the annotation highlights on this page."
+  notifications:
+    session:
+      testing-version: "" # leave blank to not show a testing-version notice
 # eo:
 #   iso-name: "Esperanto"
 #   local-name: ""
