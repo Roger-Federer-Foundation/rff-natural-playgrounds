@@ -27,7 +27,7 @@
 
 // We use blue as an accent colour, so we need extra affordances that links are clickable.
 #content {
-    a {
+    a:not(.button):not(.footnote):not(.reversefootnote) {
         border-bottom: $rule-thickness dashed $lightgrey;
         &:hover {
             border-bottom-color: $grey;
