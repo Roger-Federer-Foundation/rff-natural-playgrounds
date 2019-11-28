@@ -23,7 +23,7 @@ project:
   # Primary language code for this project as a whole
   language: "en"
   # App bundle ID unique across all app stores
-  app-id: com.example.myapp
+  app-id: com.electricbookworks.rff.npt
   # Version. You must change this with each app update
   version: "1.0.0"
 
