@@ -27,10 +27,16 @@
 
 // We use blue as an accent colour, so we need extra affordances that links are clickable.
 #content {
-    a:not(.button):not(.footnote):not(.reversefootnote) {
+    a {
         border-bottom: $rule-thickness dashed $lightgrey;
         &:hover {
             border-bottom-color: $grey;
+        }
+        // Don't show this border on certain kinds of link
+        &.button,
+        &.footnote,
+        &.reversefootnote {
+            border-bottom-width: 0;
         }
     }
     .nav-slides {
