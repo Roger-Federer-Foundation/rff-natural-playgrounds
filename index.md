@@ -1,5 +1,5 @@
 ---
-title: Home
+title: Natural Playgrounds Toolkit
 style: home
 image: cover-photo.jpg
 image-focus: 50% 50%
