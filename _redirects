@@ -1,2 +1,5 @@
 # Redirect default Netlify subdomain to primary domain
 https://rff-natural-playgrounds.netlify.com/* https://natural-playgrounds-toolkit.ready4school.info/:splat 301!
+
+# Redirect short-url subdomain to primary domain
+https://natpg.ready4school.info/* https://natural-playgrounds-toolkit.ready4school.info/:splat 301!
