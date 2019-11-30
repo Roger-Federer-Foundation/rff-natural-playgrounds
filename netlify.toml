@@ -22,5 +22,6 @@
 
 # Build the master branch with the live config.
 # This more specific rule overrides the default build command above.
+# Note: no spaces after comma in --config.
 [context.master]
-  command = "jekyll build --config='_config.yml, _configs/_config.live.yml'"
+  command = "jekyll build --config='_config.yml,_configs/_config.live.yml'"
