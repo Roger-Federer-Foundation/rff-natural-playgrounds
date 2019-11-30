@@ -5,8 +5,8 @@
 build: live
 
 # URLs
-canonical-url: "http://example.com"
-baseurl: "/example"
+canonical-url: "https://natural-playgrounds-toolkit.ready4school.info"
+baseurl: ""
 
 # Exclude list
 exclude: [
