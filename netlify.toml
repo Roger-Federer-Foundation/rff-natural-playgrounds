@@ -3,11 +3,13 @@
 # https://docs.netlify.com/configure-builds/file-based-configuration/#redirects
 
 [[redirects]]
-  from = "https://rff-natural-playgrounds.netlify.com/*"
-  to = "https://natural-playgrounds-toolkit.ready4school.info/:splat"
-  status = 301
-
-[[redirects]]
   from = "https://natpg.ready4school.info/*"
   to = "https://natural-playgrounds-toolkit.ready4school.info/:splat"
   status = 301
+  force = true
+
+[[redirects]]
+  from = "https://rff-natural-playgrounds.netlify.com/*"
+  to = "https://natural-playgrounds-toolkit.ready4school.info/:splat"
+  status = 301
+  force = true
