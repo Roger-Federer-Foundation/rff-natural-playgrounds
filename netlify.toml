@@ -2,6 +2,8 @@
 # Jekyll does not build files that start with underscores.
 # https://docs.netlify.com/configure-builds/file-based-configuration/#redirects
 
+# Redirect various domains to the canonical domain
+# The order of these redirects matters.
 [[redirects]]
   from = "https://natpg.ready4school.info/*"
   to = "https://natural-playgrounds-toolkit.ready4school.info/:splat"
@@ -13,3 +15,12 @@
   to = "https://natural-playgrounds-toolkit.ready4school.info/:splat"
   status = 301
   force = true
+
+# Default build settings
+[build]
+  command = jekyll build --baseurl=""
+
+# Build the master branch with the live config.
+# This more specific rule overrides the default build command above.
+[context.master]
+  command = jekyll build --config="_config.yml, _configs/_config.live.yml"
