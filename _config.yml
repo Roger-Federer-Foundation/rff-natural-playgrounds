@@ -85,7 +85,7 @@ mathjax-enabled: false
 #            across books in this project.
 collections:
   docs:
-    output: false
+    output: true
   items:
     output: false
 
