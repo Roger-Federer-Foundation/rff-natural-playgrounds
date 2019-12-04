@@ -27,17 +27,21 @@ layout: null
     {% include_relative slides.js %}
     {% include_relative definitions.js %}
     {% include_relative notifications.js %}
-    
+
     {% if site.data.settings.web.svg.inject == true %}
     {% include_relative svg-inject.min.js %}
     {% include_relative svg-management.js %}
     {% endif %}
-    
+
     {% include_relative list-to-checklist.js %}
     {% include_relative table-to-form.js %}
     {% include_relative form-storage-checkboxes.js %}
     {% include_relative form-storage-textareas.js %}
 
+{% endif %}
+
+{% if site.output == "app" %}
+    {% include_relative android-open-pdf.js %}
 {% endif %}
 
 {% if site.output == "web" and site.build != "live" and site.data.settings.web.annotator.development == true %}
