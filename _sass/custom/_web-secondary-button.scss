@@ -1,0 +1,27 @@
+.secondary-button {
+    @include button($text-color: $color-background, $button-color: $color-buttons, $button-hover-color: $color-buttons-hover);
+    display: inline-block;
+    font-family: $font-text-secondary;
+    font-size: 90%;
+    color: $color-accent;
+    line-height: 80%;
+    text-decoration: none;
+    background-color: $color-background;
+    padding: 0.2em 0.4em;
+    margin: 0;
+    text-align: center;
+    text-indent: 0;
+    border-radius: $button-border-radius;
+    cursor: pointer;
+    border: $rule-thickness solid $color-accent;
+    &:hover {
+        background-color: $color-accent;
+        color: $color-background;
+    }
+}
+
+.secondary-button {
+    clear: none;
+    float: right;
+    display: inline-block;
+}

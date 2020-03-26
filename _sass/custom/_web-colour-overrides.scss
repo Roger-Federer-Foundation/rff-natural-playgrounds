@@ -21,7 +21,7 @@
         background-color: $lightlightcolor;
     }
     // Text colour changes
-    #content a:not(.button):not(.reversefootnote),
+    #content a:not(.button):not(.reversefootnote):not(.secondary-button),
     #content [role="tab"] a,
     #content h1,
     #content h2,
