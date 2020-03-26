@@ -15,12 +15,6 @@ The Natural Playgrounds Toolkit helps to develop a deeper understanding of the i
 
 [Read online](#home-sections){:.button}
 
-{% if site.output == "app" %}
-[Open PDF](downloads/natural-playgrounds-toolkit.pdf){:.button.download-pdf}
-{% else %}
-[Download PDF (1.6MB)](downloads/natural-playgrounds-toolkit.pdf){:.button.download-pdf}
-{% endif %}
-
 </div>
 
 <div class="home-sections" markdown="1" id="home-sections">
@@ -30,6 +24,22 @@ The Natural Playgrounds Toolkit helps to develop a deeper understanding of the i
 - [**Section 3:** Assess](book/text/03.html)
 - [**Section 4:** Act](book/text/04.html)
 - [**Section 5:** Monitor and Evaluate](book/text/05.html)
+
+</div>
+
+<div class="home-secondary-buttons" markdown="1">
+
+{% if site.output == "app" %}
+[Facilitator's Guide](book/text/07.html){:.secondary-button}
+
+[Printable PDF](downloads/natural-playgrounds-toolkit.pdf){:.secondary-button.download-pdf}
+{% else %}
+[Facilitator's Guide](book/text/07.html){:.secondary-button}
+
+[Download PDF (1.6MB)](downloads/natural-playgrounds-toolkit.pdf){:.secondary-button.download-pdf}
+
+[Download app](https://play.google.com/store/apps/details?id=com.electricbookworks.rff.npt){:.secondary-button}
+{% endif %}
 
 </div>
 
