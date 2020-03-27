@@ -13,7 +13,7 @@ The Natural Playgrounds Toolkit helps to develop a deeper understanding of the i
 
 <div class="home-buttons" markdown="1">
 
-[Read online](#home-sections){:.button}
+[Read now](#home-sections){:.button}
 
 </div>
 
