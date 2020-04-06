@@ -239,9 +239,6 @@ works:
           - "50-01-glossary"
           - "50-02-references"
         nav: # For each menu item, include at least label and file. Optionally add id (for deep linking) and children.
-          - label: "Contents"
-            file: "0-3-contents"
-            class: "toc-frontmatter"
           - label: "Introduction"
             file: "0-4-introduction"
             class: "toc-frontmatter"
