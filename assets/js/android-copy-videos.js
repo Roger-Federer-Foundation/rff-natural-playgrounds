@@ -19,6 +19,7 @@ const filelist = [
 function ebDownloadVideosFromTheInternet() {
     "use strict";
 
+    let j = 1;
     const url = "https://rff.ebw.co/videos/";
     const dst = cordova.file.dataDirectory;
 
@@ -27,22 +28,21 @@ function ebDownloadVideosFromTheInternet() {
         "This could take a few minutes, depending on your internet connection"
     );
 
-    let j = 1;
+    function downloadSuccess(j) {
+        alert(`File ${j} of 6 has downloaded successfully.`);
+    }
 
     filelist.forEach(function (filename) {
         let fileTransfer = new FileTransfer();
         fileTransfer.download(
             url + filename,
             dst + filename,
-            function (theFile) {
-                console.log("download complete: " + theFile.toURL());
-                alert(`File ${j} of 6 has downloaded successfully.`);
-                j += 1;
-            },
+            downloadSuccess(j),
             function (error) {
                 console.log(error);
             }
         );
+        j += 1;
     });
 }
 
