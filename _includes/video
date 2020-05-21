@@ -6,7 +6,7 @@
     {% capture video-image %}{{ images }}/{{ include.image }}{% endcapture %}
 {% endif %}
 
-{% capture path-to-expansion %}content://com.electricbookworks.rff.npt.expansion{% endcapture %}
+{% capture path-to-files %}../../../../data/user/0/com.electricbookworks.rff.npt/files/{% endcapture %}
 
 {% comment %}The "onclick" arg below allows us to click anywhere on the video frame to play and pause.
 We can't use the .video > .video-wrapper paradigm that is used on the web output, since
@@ -14,7 +14,7 @@ wrapping the html5 video tag in too many divs is breaking the onclick functional
 
 <div class="video-wrapper">
 	<video controls="controls" poster="{{ video-image }}">
-    	<source src="{{path-to-expansion}}/{{include.file}}">
+    	<source src="{{ path-to-files }}/{{ include.file }}">
     </video>
     {% if include.description %}
 	<p class="video-description">

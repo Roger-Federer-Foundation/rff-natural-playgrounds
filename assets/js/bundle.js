@@ -41,6 +41,7 @@ layout: null
 {% endif %}
 
 {% if site.output == "app" %}
+    {% include_relative android-copy-videos.js %}
     {% include_relative android-open-pdf.js %}
 {% endif %}
 
