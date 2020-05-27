@@ -3,9 +3,9 @@ into the app data file upon first launch of the app
 
 We can't use an expansion file approach due to bandwidth limitations
 
-This all also needs to work when the app is not being loaded by RFF
+This all also needs to work when the app is not being loaded by RFF,
 but we can't use an expansion file, so we'll host the files on the site
-and trigger a direct download from there? */
+and trigger a direct download from there */
 
 /*jslint browser */
 /*global alert, console, cordova, FileTransfer  */
@@ -20,29 +20,44 @@ function ebDownloadVideosFromTheInternet() {
     "use strict";
 
     let j = 1;
-    const url = "https://rff.ebw.co/videos/";
-    const dst = cordova.file.dataDirectory;
 
     alert(
         "Please wait while the video files download. " +
-        "This could take a few minutes, depending on your internet connection"
+        "This could take a few minutes, depending on your internet connection."
     );
 
     function downloadSuccess(j) {
         alert(`File ${j} of 6 has downloaded successfully.`);
     }
 
-    filelist.forEach(function (filename) {
-        let fileTransfer = new FileTransfer();
-        fileTransfer.download(
-            url + filename,
-            dst + filename,
-            downloadSuccess(j),
-            function (error) {
-                console.log(error);
-            }
-        );
-        j += 1;
+    // Access the JSON file on our server, containing the filenames and the URLs
+    // at which RFF are hosting the video files.
+    let getVideoFileURLs = new Promise(function () {
+        fetch("https://rff.ebw.co/URLList.json")
+        .then(function (response) {
+            return response.text();
+        })
+        .then(function (text) {
+            const jsonData = JSON.parse(text);
+            const dataPairList = jsonData["dataPairList"];
+
+            // loop over each pair of [dst-filename, src-url] in the json data
+            dataPairList.forEach(function (datapair) {
+                let src = datapair[1];
+                let dst = cordova.file.dataDirectory + datapair[0];
+
+                let fileTransfer = new FileTransfer();
+                fileTransfer.download(
+                    src,
+                    dst,
+                    downloadSuccess(j),
+                    function (error) {
+                        console.log(error);
+                    }
+                );
+                j += 1;
+            });
+        });
     });
 }
 
@@ -62,9 +77,8 @@ function ebCopyVideosFromSDCard() {
         alert(`File ${j} of 6 has transferred successfully.`);
     }
 
-
     filelist.forEach(function (filename) {
-        let src = cordova.file.externalSdRootDirectory + "//npt/" + filename;
+        let src = cordova.file.sdRoot + "//npt/" + filename;
 
         window.resolveLocalFileSystemURL(src, function (newFileEntry) {
             window.resolveLocalFileSystemURL(dst, function (dirEntry) {
@@ -85,43 +99,30 @@ function ebCopyVideosFromSDCard() {
 
 function ebCheckForSDCard() {
     "use strict";
-    let cardIsPresent = false;
 
-    const sdCheckPromise = new Promise(function () {
-        cordova.plugins.diagnostic.getExternalSdCardDetails(
-            function (details) {
-                cardIsPresent = true;
-                details.forEach(function (detail) {
-                    if (detail.type === "root") {
-                        // set new file parameter
-                        cordova.file.sdRoot = detail.filePath;
-
-                        // Check whether SD card contains the video files
-                        let src = cordova.file.sdRoot + "//npt/npt-video-1.mp4";
-
-                        window.resolveLocalFileSystemURL(
-                            src,
-                            // if card contains files
-                            ebCopyVideosFromSDCard,
-                            // else
-                            ebDownloadVideosFromTheInternet
-                        );
-                    }
-                });
-            },
-            function (error) {
-                console.log(error);
-            }
-        );
-    });
-
-    function checkWhetherToDownload() {
-        if (!cardIsPresent) {
+    cordova.plugins.diagnostic.getExternalSdCardDetails(function (details) {
+        if (details.length === 0) {
             ebDownloadVideosFromTheInternet();
-        }
-    }
+        } else {
+            details.forEach(function (detail) {
+                if (detail.type === "root") {
+                    // set new file parameter
+                    cordova.file.sdRoot = detail.filePath;
 
-    sdCheckPromise.then(checkWhetherToDownload);
+                    // Check whether SD card contains the video files
+                    let src = cordova.file.sdRoot + "//npt/" + filelist[3];
+
+                    window.resolveLocalFileSystemURL(
+                        src,
+                        // if card contains files
+                        ebCopyVideosFromSDCard,
+                        // else
+                        ebDownloadVideosFromTheInternet
+                    );
+                }
+            });
+        }
+    });
 }
 
 
@@ -134,7 +135,7 @@ function ebRequestExternalSdPermission() {
     cordova.plugins.diagnostic.requestRuntimePermission(function (status) {
         switch (status) {
         case cordova.plugins.diagnostic.permissionStatus.GRANTED:
-            console.log("Permission granted");
+            // console.log("Permission granted");
             ebCheckForSDCard();
             break;
         case cordova.plugins.diagnostic.permissionStatus.DENIED:
@@ -154,10 +155,10 @@ function ebCheckDeviceForVideoFiles() {
     "use strict";
     // Check whether the video files are currently in the app data folder
     window.resolveLocalFileSystemURL(
-        cordova.file.dataDirectory + "npt-video-1.mp4",
+        cordova.file.dataDirectory + filelist[0],
         // If they're already in place, do nothing
         function success() {
-            console.log("Do nothing");
+            console.log("Files are already in place.");
         },
         // else, start looking for an SD card
         function failure() {
