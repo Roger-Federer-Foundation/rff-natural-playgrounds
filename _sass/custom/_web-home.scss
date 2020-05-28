@@ -53,6 +53,22 @@
     }
 }
 
+.home-secondary-buttons {
+    display: flex;
+    justify-content: center;
+    p {
+        margin-right: 1em;
+        &:last-child {
+            margin-right: 0;
+        }
+        a {
+            border-bottom: solid!important;
+            border-bottom-width: $rule-thickness!important;
+            padding: $line-height-default / 2;
+        }
+    }
+}
+
 .home-sections {
     margin: 4em 0 7em 0;
     ul {

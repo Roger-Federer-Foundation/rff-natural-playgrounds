@@ -387,6 +387,7 @@ $web-reset-sequences: true !default; // This should stay last in the @import lis
 @import 'custom/web-tools';
 @import 'custom/web-typography';
 @import 'custom/web-notifications';
+@import 'custom/web-secondary-button';
 
 // Logic (if this then that)
 @import "partials/web-reset-sequences"; // This should stay last in the @import list
