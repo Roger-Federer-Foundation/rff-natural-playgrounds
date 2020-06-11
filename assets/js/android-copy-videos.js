@@ -110,6 +110,8 @@ function ebCheckForSDCard() {
                     cordova.file.sdRoot = detail.filePath;
 
                     // Check whether SD card contains the video files
+                    // The forth file is the largest and therefore most likely
+                    // to be the last one to copy over
                     let src = cordova.file.sdRoot + "//npt/" + filelist[3];
 
                     window.resolveLocalFileSystemURL(
