@@ -19,16 +19,11 @@ const filelist = [
 function ebDownloadVideosFromTheInternet() {
     "use strict";
 
-    let j = 1;
-
     alert(
         "Please wait while the video files download. " +
-        "This could take a few minutes, depending on your internet connection."
+        "This could take a few minutes, depending on your internet connection. " +
+        "Please wait until all videos have loaded before leaving this page."
     );
-
-    function downloadSuccess(j) {
-        alert(`File ${j} of 6 has downloaded successfully.`);
-    }
 
     // Access the JSON file on our server, containing the filenames and the URLs
     // at which RFF are hosting the video files.
@@ -41,6 +36,7 @@ function ebDownloadVideosFromTheInternet() {
             const jsonData = JSON.parse(text);
             const dataPairList = jsonData["dataPairList"];
 
+            let j = 1;
             // loop over each pair of [dst-filename, src-url] in the json data
             dataPairList.forEach(function (datapair) {
                 let src = datapair[1];
@@ -50,14 +46,16 @@ function ebDownloadVideosFromTheInternet() {
                 fileTransfer.download(
                     src,
                     dst,
-                    downloadSuccess(j),
+                    function (entry) {
+                        alert(`Video ${j} of 6 has downloaded successfully`);
+                        j += 1;
+                    },
                     function (error) {
                         console.log(error);
                     }
                 );
-                j += 1;
             });
-        });
+        })
     });
 }
 
@@ -70,21 +68,22 @@ function ebCopyVideosFromSDCard() {
 
     alert(
         "Please wait while the video files copy from the SD card. " +
-        "This could take a few minutes."
+        "This could take a few minutes. " +
+        "Please wait until all videos have transferred before leaving this page."
     );
-
-    function copySuccess(j) {
-        alert(`File ${j} of 6 has transferred successfully.`);
-    }
 
     filelist.forEach(function (filename) {
         let src = cordova.file.sdRoot + "//npt/" + filename;
 
         window.resolveLocalFileSystemURL(src, function (newFileEntry) {
             window.resolveLocalFileSystemURL(dst, function (dirEntry) {
-                newFileEntry.copyTo(dirEntry, filename, copySuccess(j));
-                j += 1;
-
+                newFileEntry.copyTo(
+                    dirEntry,
+                    filename,
+                    function copySuccess () {
+                        alert(`Video ${j} of 6 has transferred successfully.`);
+                        j += 1;
+                    });
             }, function onFailure(error) {
                 console.log("fail to resolve dirEntry");
                 console.log(error);
