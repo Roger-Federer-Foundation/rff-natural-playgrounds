@@ -7,6 +7,8 @@ image-focus: 50% 50%
 
 # Natural Playgrounds Toolkit
 
+{% include video-loading-notification %}
+
 {% include opener-image.html %}
 
 The Natural Playgrounds Toolkit helps to develop a deeper understanding of the importance of play in early learning and provides teachers, parents and communities with the knowledge and skills to build a playground for young children out of locally available resources.

@@ -21,8 +21,7 @@ function ebDownloadVideosFromTheInternet() {
 
     alert(
         "Please wait while the video files download. " +
-        "This could take a few minutes, depending on your internet connection. " +
-        "Please wait until all videos have loaded before leaving this page."
+        "This could take a few minutes, depending on your internet connection. "
     );
 
     // Access the JSON file on our server, containing the filenames and the URLs
@@ -48,6 +47,9 @@ function ebDownloadVideosFromTheInternet() {
                     dst,
                     function (entry) {
                         alert(`Video ${j} of 6 has downloaded successfully`);
+                        if (j === 6) {
+                            ebDeactivateVideoLoadingMessage();
+                        }
                         j += 1;
                     },
                     function (error) {
@@ -68,8 +70,7 @@ function ebCopyVideosFromSDCard() {
 
     alert(
         "Please wait while the video files copy from the SD card. " +
-        "This could take a few minutes. " +
-        "Please wait until all videos have transferred before leaving this page."
+        "This could take a few minutes. "
     );
 
     filelist.forEach(function (filename) {
@@ -82,6 +83,9 @@ function ebCopyVideosFromSDCard() {
                     filename,
                     function copySuccess () {
                         alert(`Video ${j} of 6 has transferred successfully.`);
+                        if (j === 6) {
+                            ebDeactivateVideoLoadingMessage();
+                        }
                         j += 1;
                     });
             }, function onFailure(error) {
@@ -151,6 +155,29 @@ function ebRequestExternalSdPermission() {
     }, cordova.plugins.diagnostic.permission.WRITE_EXTERNAL_STORAGE);
 }
 
+function ebActivateVideoLoadingMessage () {
+    let loadingMessage = document.querySelector(".video-loading-notification-wrapper");
+
+    if (loadingMessage && loadingMessage.classList.contains("visuallyhidden")) {
+        loadingMessage.classList.remove("visuallyhidden"); // unhide the message
+        let allPageLinks = document.querySelectorAll("a");
+        allPageLinks.forEach(function(link) {
+            link.setAttribute("style", "pointer-events: none");
+        });
+    }
+}
+
+function ebDeactivateVideoLoadingMessage () {
+    let loadingMessage = document.querySelector(".video-loading-notification-wrapper");
+
+    if (loadingMessage) {
+        loadingMessage.classList.add("visuallyhidden");
+        let allPageLinks = document.querySelectorAll("a");
+        allPageLinks.forEach(function(link) {
+            link.setAttribute("style", "pointer-events: auto");
+        });
+    }
+}
 
 function ebCheckDeviceForVideoFiles() {
     "use strict";
@@ -163,6 +190,7 @@ function ebCheckDeviceForVideoFiles() {
         },
         // else, start looking for an SD card
         function failure() {
+            ebActivateVideoLoadingMessage();
             ebRequestExternalSdPermission();
         }
     );
