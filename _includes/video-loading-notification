@@ -1,0 +1,6 @@
+<div class="video-loading-notification-wrapper visuallyhidden">
+    <div class="video-loading-notification">
+        Please wait while the video files download.
+    </div>
+    <div class="lds-dual-ring"></div>
+</div>

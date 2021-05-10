@@ -391,6 +391,7 @@ $web-reset-sequences: true !default; // This should stay last in the @import lis
 
 // Custom class for app videos
 @import 'custom/app-video';
+@import 'custom/app-video-loading';
 
 // Logic (if this then that)
 @import "partials/web-reset-sequences"; // This should stay last in the @import list
