@@ -1,14 +1,19 @@
 /* For this project, the video files need to be copied from an SD card
-into the app data file upon first launch of the app
+into the app data file upon first launch of the app.
 
-We can't use an expansion file approach due to bandwidth limitations
+We can't include the videos in the app itself, due to bandwidth limitations as
+well as limitations from the Google Play store.
 
-This all also needs to work when the app is not being loaded by RFF,
-but we can't use an expansion file, so we'll host the files on the site
-and trigger a direct download from there */
+The six video files live in a folder called "npt" in the root directorty of the
+SD card.
+
+This all also needs to work when the app is not being loaded by RFF (i.e. if
+a random person downloads the app from the store), so we'll host the files on
+a server as well, and trigger a direct download from there in the case where
+there is no SD card. */
 
 /*jslint browser */
-/*global alert, console, cordova, FileTransfer  */
+/*global alert, console, cordova, FileTransfer, fetch  */
 
 const filelist = [
     "npt-video-1.mp4", "npt-video-2.mp4", "npt-video-3.mp4",
@@ -33,20 +38,21 @@ function ebDownloadVideosFromTheInternet() {
         })
         .then(function (text) {
             const jsonData = JSON.parse(text);
-            const dataPairList = jsonData["dataPairList"];
+            const dataPairList = jsonData.dataPairList;
 
             let j = 1;
-            // loop over each pair of [dst-filename, src-url] in the json data
+            // Loop over each pair of [dst-filename, src-url] in the json data
             dataPairList.forEach(function (datapair) {
                 let src = datapair[1];
                 let dst = cordova.file.dataDirectory + datapair[0];
 
+                // Use the cordova-plugin-file-transfer plugin
                 let fileTransfer = new FileTransfer();
                 fileTransfer.download(
                     src,
                     dst,
                     function (entry) {
-                        alert(`Video ${j} of 6 has downloaded successfully`);
+                        alert(`Video ${j} of 6 has downloaded successfully. Hit OK to continue.`);
                         if (j === 6) {
                             ebDeactivateVideoLoadingMessage();
                         }
@@ -57,7 +63,7 @@ function ebDownloadVideosFromTheInternet() {
                     }
                 );
             });
-        })
+        });
     });
 }
 
@@ -74,15 +80,17 @@ function ebCopyVideosFromSDCard() {
     );
 
     filelist.forEach(function (filename) {
+        // Find the files on the SD card
         let src = cordova.file.sdRoot + "//npt/" + filename;
 
         window.resolveLocalFileSystemURL(src, function (newFileEntry) {
             window.resolveLocalFileSystemURL(dst, function (dirEntry) {
+                // Use the cordova-plugin-file plugin to copy the files
                 newFileEntry.copyTo(
                     dirEntry,
                     filename,
                     function copySuccess () {
-                        alert(`Video ${j} of 6 has transferred successfully.`);
+                        alert(`Video ${j} of 6 has transferred successfully. Hit OK to continue.`);
                         if (j === 6) {
                             ebDeactivateVideoLoadingMessage();
                         }
@@ -103,25 +111,29 @@ function ebCopyVideosFromSDCard() {
 function ebCheckForSDCard() {
     "use strict";
 
+    // Use the cordova.plugins.diagnostic plugin to get the SD card name
     cordova.plugins.diagnostic.getExternalSdCardDetails(function (details) {
+        console.log(details);
         if (details.length === 0) {
+            // If no SD card is detected in the device
             ebDownloadVideosFromTheInternet();
         } else {
+            console.log(details);
             details.forEach(function (detail) {
                 if (detail.type === "root") {
-                    // set new file parameter
+                    // Set new file parameter
                     cordova.file.sdRoot = detail.filePath;
 
-                    // Check whether SD card contains the video files
-                    // The forth file is the largest and therefore most likely
-                    // to be the last one to copy over
+                    // Check whether SD card contains the video files.
+                    // The fourth file is the largest and therefore most likely
+                    // to be the last one to copy over.
                     let src = cordova.file.sdRoot + "//npt/" + filelist[3];
 
                     window.resolveLocalFileSystemURL(
                         src,
-                        // if card contains files
+                        // If card contains files
                         ebCopyVideosFromSDCard,
-                        // else
+                        // Else
                         ebDownloadVideosFromTheInternet
                     );
                 }
@@ -140,7 +152,7 @@ function ebRequestExternalSdPermission() {
     cordova.plugins.diagnostic.requestRuntimePermission(function (status) {
         switch (status) {
         case cordova.plugins.diagnostic.permissionStatus.GRANTED:
-            // console.log("Permission granted");
+            console.log("Permission granted");
             ebCheckForSDCard();
             break;
         case cordova.plugins.diagnostic.permissionStatus.DENIED:
@@ -156,6 +168,12 @@ function ebRequestExternalSdPermission() {
 }
 
 function ebActivateVideoLoadingMessage () {
+    "use strict";
+
+    // This activates a loading screen, so that the user cannot interrupt
+    // the video loading process by navigating to a different page in the app,
+    // until the videos have all copied.
+
     let loadingMessage = document.querySelector(".video-loading-notification-wrapper");
 
     if (loadingMessage && loadingMessage.classList.contains("visuallyhidden")) {
@@ -168,6 +186,7 @@ function ebActivateVideoLoadingMessage () {
 }
 
 function ebDeactivateVideoLoadingMessage () {
+    "use strict";
     let loadingMessage = document.querySelector(".video-loading-notification-wrapper");
 
     if (loadingMessage) {
@@ -185,10 +204,11 @@ function ebCheckDeviceForVideoFiles() {
     window.resolveLocalFileSystemURL(
         cordova.file.dataDirectory + filelist[0],
         // If they're already in place, do nothing
+        // This will be the case when the JS loads on all other pages of the book
         function success() {
             console.log("Files are already in place.");
         },
-        // else, start looking for an SD card
+        // Else, start looking for an SD card
         function failure() {
             ebActivateVideoLoadingMessage();
             ebRequestExternalSdPermission();
@@ -196,8 +216,9 @@ function ebCheckDeviceForVideoFiles() {
     );
 }
 
-
+// Wait for the cordova file plugin to load, before continuing
 document.addEventListener("deviceready", function () {
+    "use strict";
     if (window.isFilePluginReadyRaised) {
         ebCheckDeviceForVideoFiles();
     } else {
