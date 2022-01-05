@@ -32,6 +32,16 @@
     }
 }
 
+//sets up the buttons on the video menu
+#videomenu button {
+  display: block;
+  width: 50%;
+  border: 1px solid #000;
+  margin: 1rem auto;
+  padding:.5rem;
+}
+
+
 // https://loading.io/css/
 .lds-dual-ring {
   display: block;
@@ -50,5 +60,3 @@
   border-color: $white transparent $white transparent;
   animation: lds-dual-ring 1.2s linear infinite;
 }
-
-
