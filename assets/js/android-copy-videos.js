@@ -15,6 +15,7 @@ const filelist = [
   "npt-video-4.mp4", "npt-video-5.mp4", "npt-video-6.mp4"
 ];
 
+
 function manageVideos()
 {
    console.log("Manage Videos")
@@ -135,72 +136,69 @@ function manageVideos()
          });
    }
 
-      function downloadFromURLList(files)
-      {
-        console.log(files);
-        for (i=0;i<files.length;i+=1) { //match each if we can
-          let match=vids.find(v=>v.name==files[i][0]);
-          if (match)
-            match.fromURL=files[i][1];
-        }
-        let vi=-1;
-        function next() {
-          updateVideoStatus("Starting Download",false);
-          vi+=1;
-          if (vi==nvids) {
-            showVideoMenu();
-            return;
-          }
-          if ((vids[vi].status=="AVAILABLE")||(!vids[vi].fromURL)) { //we don't need it or don't have a URL to get it from
-            next();
-            return; }
-
-          // Use the cordova-plugin-file-transfer plugin to downlaod the file
-          console.log("create file transfer",vids[vi].fromURL,cordova.file.dataDirectory+vids[vi].name)
-          let fileTransfer = new FileTransfer();
-          fileTransfer.onprogress=(p)=>{
-            let perc=Math.round(p.loaded*100/(p.total+1));
-            vids[vi].status="Downloading "+perc+"%";
-            updateVideoStatus("Downloading...");
-          };
-          fileTransfer.download(
-            vids[vi].fromURL,
-            cordova.file.dataDirectory+'TMP_'+vids[vi].name,
-            ()=>{
-              console.log("got file")
-              renameFile("TMP_"+vids[vi].name,vids[vi].name)
-              vids[vi].status="AVAILABLE";
-              vids.fromURL=null; //clear any URL
-              next();
-            },
-            ()=>{
-              console.log("failed download")
-              vids[vi].status="MISSING";
-              vids.fromURL=null; //clear any URL
-              next();
-            }
-         )
-        }
-        next();
-      }
-      checkAllStatus(); //actually start these checks
-   }
-
-   function renameFile(oldName,newName)
+   function downloadFromURLList(files)
    {
-     window.resolveLocalFileSystemURL(cordova.file.dataDirectory, (dirEntry) => {
-       dirEntry.getFile(oldName, {  }, (oldFile)=>{
-           oldFile.moveTo(dirEntry,newName,()=>console.log("rename complete"),()=>console.log("rename failed"));
-       });
-     });
-   }
+     console.log(files);
+     for (i=0;i<files.length;i+=1) { //match each if we can
+       let match=vids.find(v=>v.name==files[i][0]);
+       if (match)
+         match.fromURL=files[i][1];
+     }
+     let vi=-1;
+     function next() {
+       updateVideoStatus("Starting Download",false);
+       vi+=1;
+       if (vi==nvids) {
+         showVideoMenu();
+         return;
+       }
+       if ((vids[vi].status=="AVAILABLE")||(!vids[vi].fromURL)) { //we don't need it or don't have a URL to get it from
+         next();
+         return; }
 
+       // Use the cordova-plugin-file-transfer plugin to downlaod the file
+       console.log("create file transfer",vids[vi].fromURL,cordova.file.dataDirectory+vids[vi].name)
+       let fileTransfer = new FileTransfer();
+       fileTransfer.onprogress=(p)=>{
+         let perc=Math.round(p.loaded*100/(p.total+1));
+         vids[vi].status="Downloading "+perc+"%";
+         updateVideoStatus("Downloading...");
+       };
+       fileTransfer.download(
+         vids[vi].fromURL,
+         cordova.file.dataDirectory+'TMP_'+vids[vi].name,
+         ()=>{
+           console.log("got file")
+           renameFile("TMP_"+vids[vi].name,vids[vi].name)
+           vids[vi].status="AVAILABLE";
+           vids.fromURL=null; //clear any URL
+           next();
+         },
+         ()=>{
+           console.log("failed download")
+           vids[vi].status="MISSING";
+           vids.fromURL=null; //clear any URL
+           next();
+         }
+      )
+     }
+     next();
+   }
    checkAllStatus(); //actually start these checks
+}
+
+function renameFile(oldName,newName)
+{
+  window.resolveLocalFileSystemURL(cordova.file.dataDirectory, (dirEntry) => {
+    dirEntry.getFile(oldName, {  }, (oldFile)=>{
+        oldFile.moveTo(dirEntry,newName,()=>console.log("rename complete"),()=>console.log("rename failed"));
+    });
+  });
 }
 
 function copyFileToStorage(file,pcb,scb,fcb) {
   window.resolveLocalFileSystemURL(cordova.file.dataDirectory, (dirEntry) => {
-    dirEntry.getFile(file.name, {
+    dirEntry.getFile("TMP_"+file.name, {
         create: true,
         exclusive: false
       }, (fileEntry) => {
@@ -210,6 +208,7 @@ function copyFileToStorage(file,pcb,scb,fcb) {
           function writeNext() {
             var sz = Math.min(BLOCK_SIZE, file.size - written);
             if (sz<=0) {
+              renameFile("TMP_"+file.name,file.name);
               scb();
               return; //all done
             }
@@ -242,6 +241,7 @@ function copyFileToStorage(file,pcb,scb,fcb) {
     fcb();
   });
 }
+
 
 // Wait for the cordova file plugin to load, before trying to sort out the videos
 document.addEventListener("deviceready", function() {
