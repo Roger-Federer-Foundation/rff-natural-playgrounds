@@ -1,14 +1,19 @@
 /* For this project, the video files need to be copied from an SD card
-into the app data file upon first launch of the app
+into the app data file upon first launch of the app.
 
-We can't use an expansion file approach due to bandwidth limitations
+We can't include the videos in the app itself, due to bandwidth limitations as
+well as limitations from the Google Play store.
 
-This all also needs to work when the app is not being loaded by RFF,
-but we can't use an expansion file, so we'll host the files on the site
-and trigger a direct download from there */
+The six video files live in a folder called "npt" in the root directorty of the
+SD card.
+
+This all also needs to work when the app is not being loaded by RFF (i.e. if
+a random person downloads the app from the store), so we'll host the files on
+a server as well, and trigger a direct download from there in the case where
+there is no SD card. */
 
 /*jslint browser */
-/*global alert, console, cordova, FileTransfer  */
+/*global alert, console, cordova, FileTransfer, fetch  */
 
 const filelist = [
   "npt-video-1.mp4", "npt-video-2.mp4", "npt-video-3.mp4",
@@ -18,29 +23,37 @@ const filelist = [
 
 function manageVideos()
 {
-   console.log("Manage Videos")
+   console.log("Manage Videos");
    ///first create list
    let vids=filelist.map(n=>({ name:n, status:"unknown" }));
    let nvids=vids.length;
+   let shaker;
+
+   function keepAppAwake() {
+       window.plugins.insomnia.keepAwake();
+       console.log("awake");
+   }
 
    function checkAllStatus() {
       let vi=-1;
+      shaker = setInterval(keepAppAwake, 1000);
       function next()
       {
         vi+=1;
         if (vi==nvids) {
           //done All this so show the menu
           showVideoMenu();
+          clearInterval(shaker);
           return;
         }
         window.resolveLocalFileSystemURL( //check if the reference exists
           cordova.file.dataDirectory + vids[vi].name,
           (details)=>{ //found it
-            vids[vi].status='AVAILABLE';
+            vids[vi].status="AVAILABLE";
             next();
           },
           ()=>{ //no such file
-            vids[vi].status='MISSING';
+            vids[vi].status="MISSING";
             next();
           }
         );
@@ -49,7 +62,7 @@ function manageVideos()
    }
 
    function needVids() { //are any missing
-     return vids.some(v=>v.status=='MISSING')
+     return vids.some(v=>v.status=="MISSING")
    }
 
    function showVideoMenu()
@@ -60,7 +73,7 @@ function manageVideos()
      updateVideoStatus("Some video files are required by this application.",true);
      //bind the buttons
      document.getElementById("videocopy").onclick=()=>{
-       document.getElementById('videofilelist').click();
+       document.getElementById("videofilelist").click();
      }
      document.getElementById("videodownload").onclick=()=>{
        downloadFromNet();
@@ -95,11 +108,13 @@ function manageVideos()
          match.fromFile=file;
      }
      let vi=-1;
+     shaker = setInterval(keepAppAwake, 1000);
      function next() {
        updateVideoStatus("Starting Copy",false);
        vi+=1;
        if (vi==nvids) {
          showVideoMenu();
+         clearInterval(shaker);
          return;
        }
        if (!vids[vi].fromFile) { next(); //we don't have a file to get it from
@@ -145,11 +160,13 @@ function manageVideos()
          match.fromURL=files[i][1];
      }
      let vi=-1;
+     shaker = setInterval(keepAppAwake, 1000);
      function next() {
        updateVideoStatus("Starting Download",false);
        vi+=1;
        if (vi==nvids) {
          showVideoMenu();
+         clearInterval(shaker);
          return;
        }
        if ((vids[vi].status=="AVAILABLE")||(!vids[vi].fromURL)) { //we don't need it or don't have a URL to get it from
@@ -166,7 +183,7 @@ function manageVideos()
        };
        fileTransfer.download(
          vids[vi].fromURL,
-         cordova.file.dataDirectory+'TMP_'+vids[vi].name,
+         cordova.file.dataDirectory+"TMP_"+vids[vi].name,
          ()=>{
            console.log("got file")
            renameFile("TMP_"+vids[vi].name,vids[vi].name)

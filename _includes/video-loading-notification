@@ -4,7 +4,7 @@
     <pre id="videostatuslist">
     </pre>
     <div id="videomenu">
-    <button id="videocopy">Copy files from Local Storage</button>
+    <button id="videocopy">Copy files from SD card</button>
     <button id="videodownload">Download files from the Internet</button>
     <button id="videoskip">Skip this for now</button>
     </div>
