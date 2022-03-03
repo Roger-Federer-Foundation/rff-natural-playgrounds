@@ -23,29 +23,37 @@ const filelist = [
 
 function manageVideos()
 {
-   console.log("Manage Videos")
+   console.log("Manage Videos");
    ///first create list
    let vids=filelist.map(n=>({ name:n, status:"unknown" }));
    let nvids=vids.length;
+   let shaker;
+
+   function keepAppAwake() {
+       window.plugins.insomnia.keepAwake();
+       console.log("awake");
+   }
 
    function checkAllStatus() {
       let vi=-1;
+      shaker = setInterval(keepAppAwake, 1000);
       function next()
       {
         vi+=1;
         if (vi==nvids) {
           //done All this so show the menu
           showVideoMenu();
+          clearInterval(shaker);
           return;
         }
         window.resolveLocalFileSystemURL( //check if the reference exists
           cordova.file.dataDirectory + vids[vi].name,
           (details)=>{ //found it
-            vids[vi].status='AVAILABLE';
+            vids[vi].status="AVAILABLE";
             next();
           },
           ()=>{ //no such file
-            vids[vi].status='MISSING';
+            vids[vi].status="MISSING";
             next();
           }
         );
@@ -54,7 +62,7 @@ function manageVideos()
    }
 
    function needVids() { //are any missing
-     return vids.some(v=>v.status=='MISSING')
+     return vids.some(v=>v.status=="MISSING")
    }
 
    function showVideoMenu()
@@ -65,7 +73,7 @@ function manageVideos()
      updateVideoStatus("Some video files are required by this application.",true);
      //bind the buttons
      document.getElementById("videocopy").onclick=()=>{
-       document.getElementById('videofilelist').click();
+       document.getElementById("videofilelist").click();
      }
      document.getElementById("videodownload").onclick=()=>{
        downloadFromNet();
@@ -100,11 +108,13 @@ function manageVideos()
          match.fromFile=file;
      }
      let vi=-1;
+     shaker = setInterval(keepAppAwake, 1000);
      function next() {
        updateVideoStatus("Starting Copy",false);
        vi+=1;
        if (vi==nvids) {
          showVideoMenu();
+         clearInterval(shaker);
          return;
        }
        if (!vids[vi].fromFile) { next(); //we don't have a file to get it from
@@ -150,11 +160,13 @@ function manageVideos()
          match.fromURL=files[i][1];
      }
      let vi=-1;
+     shaker = setInterval(keepAppAwake, 1000);
      function next() {
        updateVideoStatus("Starting Download",false);
        vi+=1;
        if (vi==nvids) {
          showVideoMenu();
+         clearInterval(shaker);
          return;
        }
        if ((vids[vi].status=="AVAILABLE")||(!vids[vi].fromURL)) { //we don't need it or don't have a URL to get it from
@@ -171,7 +183,7 @@ function manageVideos()
        };
        fileTransfer.download(
          vids[vi].fromURL,
-         cordova.file.dataDirectory+'TMP_'+vids[vi].name,
+         cordova.file.dataDirectory+"TMP_"+vids[vi].name,
          ()=>{
            console.log("got file")
            renameFile("TMP_"+vids[vi].name,vids[vi].name)
