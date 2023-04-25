@@ -1,12 +1,10 @@
 <div id="videopanel" class="video-loading-notification-wrapper visuallyhidden">
-    <div id="videomessage" class="video-loading-notification">
-    </div>
-    <pre id="videostatuslist">
-    </pre>
+    <div id="videomessage" class="video-loading-notification"></div>
+    <pre id="videostatuslist"></pre>
     <div id="videomenu">
-    <button id="videocopy">Copy files from SD card</button>
-    <button id="videodownload">Download files from the Internet</button>
-    <button id="videoskip">Skip this for now</button>
+        <button id="videocopy">Copy files from SD card</button>
+        <button id="videodownload">Download files from the Internet</button>
+        <button id="videoskip">Skip this for now</button>
     </div>
 
     <input type="file" class="visuallyhidden"
