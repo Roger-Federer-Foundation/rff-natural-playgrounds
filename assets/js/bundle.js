@@ -40,11 +40,6 @@ layout: null
 
 {% endif %}
 
-{% if site.output == "app" %}
-    {% include_relative android-copy-videos.js %}
-    {% include_relative android-open-pdf.js %}
-{% endif %}
-
 {% if site.output == "web" and site.build != "live" and site.data.settings.web.annotator.development == true %}
     {% include_relative annotation.js %}
 {% elsif site.output == "web" and site.build == "live" and site.data.settings.web.annotator.live == true %}

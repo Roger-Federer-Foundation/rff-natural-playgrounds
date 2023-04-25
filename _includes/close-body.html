@@ -2,6 +2,10 @@
 	<script src="{{ path-to-root-directory }}assets/js/bundle.js"></script>
 {% endunless %}
 
+{% if site.output == "app" %}
+<script src="{{ path-to-root-directory }}assets/js/android-bundle.js"></script>
+{% endif %}
+
 {% if site.output == "web" or site.output == "app" %}
     {% if is-project-search or is-book-search %}
         <script src="{{ path-to-root-directory }}assets/js/search-engine.js"></script>
