@@ -9,26 +9,18 @@ This is built with the Electric Book Jekyll template for creating books in multi
 - ebook apps for Android and iOS
 - MS Word outputs for old-school editing.
 
+This repo contains the content and generates PDF and website versions of the NPT. It also generates the HTML to be used in the app. The app is created in the [rff-npt-android-app](https://github.com/Roger-Federer-Foundation/rff-npt-android-app) repo.
+
 ## Usage and documentation
+
+**The easiest way to get going is to open this repo with GitHub Codespaces from its page on GitHub.**
 
 1. Copy or clone this folder
 2. Edit as needed:
-	- `_data/meta.yml` 
+	- project metadata in `_data/meta.yml` 
 	- the stylesheet variables in `book/styles`
 	- the content files in `book/text`
 3. Run the `run-` script for your operating system.
 
-[Read the guide](https://electricbookworks.github.io/electric-book) for much more. The guide is also an example of the template in action.
+More details in the `_docs`, which [publish to GitHub Pages](https://roger-federer-foundation.github.io/rff-natural-playgrounds/docs/).
 
-## Dependencies
-
-To use the Electric Book template on your machine, you need to have installed:
-
-- [Jekyll](https://jekyllrb.com/) (and which requires Ruby and Bundler)
-- [PrinceXML](http://www.princexml.com/) (for PDF output; the only proprietary requirement)
-- [PhantomJS](http://phantomjs.org/) (to generate search indexes for web and app outputs)
-- [Node.js](https://nodejs.org), [Gulp](https://gulpjs.com/) and [GraphicsMagick](http://www.graphicsmagick.org/) (to create multiformat images)
-- [Pandoc](http://pandoc.org/) (for Word export)
-- [Cordova](https://cordova.apache.org), [Android Studio](https://developer.android.com/studio), and (on OSX) [XCode](https://developer.apple.com/xcode/) (for building ebook apps)
-
-And of course a good editor like [Sublime](https://www.sublimetext.com/), [Brackets](http://brackets.io/) or [Atom](https://atom.io/).
